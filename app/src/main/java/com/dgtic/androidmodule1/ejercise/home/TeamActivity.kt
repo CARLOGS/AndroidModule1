@@ -45,7 +45,7 @@ class TeamActivity : AppCompatActivity() {
 
         // Botón para ir al Activity de Carlo
         val btnCarlo = findViewById<Button>(R.id.btnCarlo)
-        btnCarlo.setBackgroundColor(Color.BLUE)
+        btnCarlo.setBackgroundColor(Color.argb(255, 0,64,121))
         btnCarlo.setOnClickListener {
             val carloIntent = Intent(this, CarloGarciaMainActivity::class.java).apply {
                 // Envía nombre como parámetro para mostrar en el Activity
@@ -58,14 +58,14 @@ class TeamActivity : AppCompatActivity() {
 
         // Botón para ir al Activity de Lisset
         val btnLisset = findViewById<Button>(R.id.btnLisset)
-        btnLisset.setBackgroundColor(Color.BLUE)
+        btnLisset.setBackgroundColor(Color.argb(255, 0,64,121))
 
         // Botón para ir al Activity de Alexis
         val btnAlexis = findViewById<Button>(R.id.btnAlxis)
-        btnAlexis.setBackgroundColor(Color.BLUE)
+        btnAlexis.setBackgroundColor(Color.argb(255, 0,64,121))
 
         // Botón para ir al Activity de Vidal
         val btnVidal = findViewById<Button>(R.id.btnVidal)
-        btnVidal.setBackgroundColor(Color.BLUE)
+        btnVidal.setBackgroundColor(Color.argb(255, 0,64,121))
     }
 }

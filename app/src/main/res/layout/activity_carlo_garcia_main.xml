@@ -27,8 +27,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:text="Mostrar datos"
-        android:id="@+id/btnShowData"
+        android:text="Ir a Instagram ..."
+        android:id="@+id/btnOpenInstagram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
@@ -38,16 +38,35 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <ImageView
+        android:id="@+id/imgInstagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_instagram"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpenInstagram"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <Button
-        android:text="Ir a Instagram ..."
-        android:id="@+id/btnOpenInstagram"
+        android:text="Mostrar datos"
+        android:id="@+id/btnShowData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
         android:width="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowData" />
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenInstagram" />
+
+    <ImageView
+        android:id="@+id/imgVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/img_ver"
+        app:layout_constraintEnd_toStartOf="@+id/btnShowData"
+        app:layout_constraintTop_toTopOf="@+id/btnShowData" />
 
     <TextView
         android:id="@+id/tvTeamUserName"
@@ -59,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vBackground"
-        app:layout_constraintBottom_toTopOf="@+id/btnShowData"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpenInstagram"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
