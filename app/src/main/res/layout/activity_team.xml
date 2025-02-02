@@ -32,7 +32,7 @@
         android:id="@+id/btnCarlo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="240dp"
+        android:width="250dp"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,11 +40,11 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:text="Ir a Lisset Noriega"
+        android:text="Ir a Lisset Noriega Domínguez"
         android:id="@+id/btnLisset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="240dp"
+        android:width="250dp"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,18 +55,18 @@
         android:id="@+id/btnAlxis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="240dp"
+        android:width="250dp"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLisset" />
 
     <Button
-        android:text="Ir a Vidal Ruiz"
+        android:text="Ir a Vidal Ruiz Vargas"
         android:id="@+id/btnVidal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="240dp"
+        android:width="250dp"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
