@@ -90,6 +90,7 @@ class InfoActivity : AppCompatActivity() {
             }
 
             setResult(RESULT_OK, resultIntent)
+
             // Destruye/cierra este Activity
             finish()
         }
@@ -101,6 +102,7 @@ class InfoActivity : AppCompatActivity() {
             }
 
             setResult(RESULT_OK, resultIntent)
+
             // Destruye/cierra este Activity
             finish()
         }
