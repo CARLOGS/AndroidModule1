@@ -28,11 +28,17 @@ import com.dgtic.androidmodule1.R
 class CarloGarciaMainActivity : AppCompatActivity() {
     // Para esperar respuesta del SecondActivity
     private val register = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        // TextView para mostrar la oferta seleccionada
+        val tvOfferSelected = findViewById<TextView>(R.id.tvOfferSelected)
+
+        // Muestra la oferta seleccionada
         if (result.resultCode == RESULT_OK) {
-            val isMale = result.data?.getBooleanExtra("EXTRA_GENDER", true)
-            Toast.makeText(this, "isCorrect: ${if (isMale != null && isMale) "Hombre" else "Mujer"}",Toast.LENGTH_LONG).show()
+            val offerSelected = result.data?.getStringExtra("EXTRA_OFFER")
+            val salarySelected = result.data?.getFloatExtra("EXTRA_SALARY", 0.0f)
+
+            tvOfferSelected.text = "Resultado: $offerSelected Sueldo: $salarySelected"
         } else {
-            Toast.makeText(this, "Género no definido",Toast.LENGTH_LONG).show()
+            tvOfferSelected.text = "Resultado: No sleccionó oferta"
         }
     }
 
@@ -50,12 +56,12 @@ class CarloGarciaMainActivity : AppCompatActivity() {
         }
 
         // Recupera btnShowData y cambia su color
-        val btnShowData = findViewById<Button>(R.id.btnShowData)
-        btnShowData.setBackgroundColor(Color.argb(255, 10,60,10))
+        val btnShowInstagram = findViewById<Button>(R.id.btnShowInstagram)
+        btnShowInstagram.setBackgroundColor(Color.argb(255, 10,60,10))
 
         // Recupera btnShowData y cambia su color
-        val btnOpenInstagram = findViewById<Button>(R.id.btnOpenInstagram)
-        btnOpenInstagram.setBackgroundColor(Color.argb(255, 54,13,61))
+        val btnOfferSelect = findViewById<Button>(R.id.btnOfferSelect)
+        btnOfferSelect.setBackgroundColor(Color.argb(255, 54,13,61))
 
         // Recupera tvTeamUserName
         val tvTeamUserName = findViewById<TextView>(R.id.tvTeamUserName)
@@ -70,7 +76,7 @@ class CarloGarciaMainActivity : AppCompatActivity() {
         }
 
         // Abre la URL de Instagram
-        btnOpenInstagram.setOnClickListener {
+        btnShowInstagram.setOnClickListener {
             // Logger
             Log.e("Open URL", "Abriendo Instagram")
 
@@ -79,9 +85,12 @@ class CarloGarciaMainActivity : AppCompatActivity() {
         }
 
         // Abre la Pantalla de Información
-        btnShowData.setOnClickListener {
+        btnOfferSelect.setOnClickListener {
             // Logger
             Log.e("Show Info", "Mostrando información")
+
+            val languages = arrayOf("Java", "JavaScript", "Python", "C#", "Basic")
+            val dbs = arrayOf("SQL Server", "Oracle", "MySQL", "DB2")
 
             val infoIntent = Intent(this, InfoActivity::class.java).apply {
                 putExtra("EXTRA_NAME", "Carlo García Sánchez")
@@ -89,14 +98,12 @@ class CarloGarciaMainActivity : AppCompatActivity() {
                 putExtra("EXTRA_GENDER", "M") // Male
                 putExtra("EXTRA_STUDY", "Ingeniero en computación")
                 putExtra("EXTRA_BORN_DATE", "1967-09-04")
-                putExtra("EXTRA_EXPERIENCE", "20 años")
-                putExtra("EXTRA_LANGUAGES", "Java, JavaScript, Python, C#, Basic")
-                putExtra("EXTRA_DB", "SQL Server, Oracle, MySQL, MongoDB, DB2")
+                putExtra("EXTRA_EXPERIENCE", 20) // Años de experiencia
+                putExtra("EXTRA_LANGUAGES", languages)
+                putExtra("EXTRA_DB", dbs)
                 putExtra("EXTRA_JOB", "IT Maganer")
+                putExtra("EXTRA_HAS_WORK", false)
             }
-
-            // Solo se manda al segundo Activity sin esperar respuesta
-            // startActivity(secondIntent)
 
             // Con esto se espera un result
             register.launch(infoIntent)

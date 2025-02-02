@@ -27,8 +27,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:text="Ir a Instagram ..."
-        android:id="@+id/btnOpenInstagram"
+        android:text="Buscar trabajo"
+        android:id="@+id/btnOfferSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
@@ -42,31 +42,31 @@
         android:id="@+id/imgInstagram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_instagram"
+        android:src="@drawable/img_ver"
         android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnOpenInstagram"
+        app:layout_constraintEnd_toStartOf="@+id/btnOfferSelect"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:text="Mostrar datos"
-        android:id="@+id/btnShowData"
+        android:text="Mi Instagram"
+        android:id="@+id/btnShowInstagram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
         android:width="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOpenInstagram" />
+        app:layout_constraintTop_toBottomOf="@+id/btnOfferSelect" />
 
     <ImageView
         android:id="@+id/imgVer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:src="@drawable/img_ver"
-        app:layout_constraintEnd_toStartOf="@+id/btnShowData"
-        app:layout_constraintTop_toTopOf="@+id/btnShowData" />
+        android:src="@drawable/logo_instagram"
+        app:layout_constraintEnd_toStartOf="@+id/btnShowInstagram"
+        app:layout_constraintTop_toTopOf="@+id/btnShowInstagram" />
 
     <TextView
         android:id="@+id/tvTeamUserName"
@@ -78,7 +78,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vBackground"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpenInstagram"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnOfferSelect" />
 
+    <TextView
+        android:id="@+id/tvOfferSelected"
+        android:textSize="15dp"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowInstagram" />
 </androidx.constraintlayout.widget.ConstraintLayout>

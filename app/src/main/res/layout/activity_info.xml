@@ -7,4 +7,305 @@
     android:layout_height="match_parent"
     tools:context=".ejercise.home.carlogarcia.InfoActivity">
 
+    <!-- Fondo blanco-->
+    <View
+        android:id="@+id/vBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--Logotipo-->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_dgtic_color_300"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Título perfil-->
+    <TextView
+        android:id="@+id/tvPerfil"
+        android:text="Perfil solicitante"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vBackground" />
+
+    <!-- Etiquetas de cada dato-->
+    <TextView
+        android:id="@+id/tvLabelName"
+        android:text="Nombre:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPerfil" />
+    <TextView
+        android:id="@+id/tvLabelAge"
+        android:text="Edad:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelName" />
+    <TextView
+        android:id="@+id/tvLabelGender"
+        android:text="Género:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelAge" />
+    <TextView
+        android:id="@+id/tvLabelStudies"
+        android:text="Estudios:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelGender" />
+    <TextView
+        android:id="@+id/tvLabelBornDate"
+        android:text="Nacimiento:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelStudies" />
+    <TextView
+        android:id="@+id/tvLabelExperience"
+        android:text="Experiencia:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelBornDate" />
+    <TextView
+        android:id="@+id/tvLabelLanguages"
+        android:text="Lenguajes:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelExperience" />
+    <TextView
+        android:id="@+id/tvLabelDbs"
+        android:text="Bases de datos: "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelLanguages" />
+    <TextView
+        android:id="@+id/tvLabelWork"
+        android:text="Último puesto:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelDbs" />
+    <TextView
+        android:id="@+id/tvLabelHasWork"
+        android:text="Trabajando:"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelWork" />
+
+    <!-- Etiquetas para presentar los datos-->
+    <TextView
+        android:id="@+id/tvName"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvPerfil" />
+    <TextView
+        android:id="@+id/tvAge"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelName" />
+    <TextView
+        android:id="@+id/tvGender"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelAge" />
+    <TextView
+        android:id="@+id/tvStudies"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelGender" />
+    <TextView
+        android:id="@+id/tvBornDate"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelStudies" />
+    <TextView
+        android:id="@+id/tvExperience"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelBornDate" />
+    <TextView
+        android:id="@+id/tvLanguages"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelExperience" />
+    <TextView
+        android:id="@+id/tvDbs"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelLanguages" />
+    <TextView
+        android:id="@+id/tvJob"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelDbs" />
+    <TextView
+        android:id="@+id/tvHasWork"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDbs"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelWork" />
+
+    <!-- Título ofertas de trabajo-->
+    <TextView
+        android:id="@+id/tvWorks"
+        android:text="Ofertas de trabajo"
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelHasWork" />
+
+    <!--Logo Oferta 1 -->
+    <ImageView
+        android:id="@+id/imgOfferOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/citibanamex_logo"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWorks" />
+
+    <!--Logo Oferta 2 -->
+    <ImageView
+        android:id="@+id/imgOfferTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_google"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imgOfferOne" />
+
+    <!-- Sueldos -->
+    <TextView
+        android:id="@+id/tvLabelSalaryOne"
+        android:text="Sueldo: "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/imgOfferOne"
+        app:layout_constraintTop_toBottomOf="@+id/imgOfferOne" />
+    <TextView
+        android:id="@+id/tvSalaryOne"
+        android:text="$ 45,000"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelSalaryOne"
+        app:layout_constraintTop_toBottomOf="@+id/imgOfferOne" />
+    <TextView
+        android:id="@+id/tvLabelSalaryTwo"
+        android:text="Sueldo: "
+        android:fontFamily="sans-serif-black"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="@+id/imgOfferTwo"
+        app:layout_constraintTop_toBottomOf="@+id/imgOfferTwo" />
+    <TextView
+        android:id="@+id/tvSalaryTwo"
+        android:text="$ 60,000"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelSalaryTwo"
+        app:layout_constraintTop_toBottomOf="@+id/imgOfferTwo" />
+
+    <!-- Botones de selección de oferta de trabajo -->
+    <Button
+        android:text="Seleccionar"
+        android:id="@+id/btnSelectOfferOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/tvLabelSalaryOne"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSalaryOne" />
+    <Button
+        android:text="Seleccionar"
+        android:id="@+id/btnSelectOfferTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/tvLabelSalaryTwo"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSalaryTwo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
