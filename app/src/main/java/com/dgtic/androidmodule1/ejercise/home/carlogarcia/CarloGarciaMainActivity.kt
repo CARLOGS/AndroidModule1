@@ -14,8 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
-import com.dgtic.androidmodule1.ejercise.classroom.explicitintent.SecondActivity
-import java.util.Date
 
 /**
  * Pantalla inicial del Ejercicio 1
