@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.alexissantos.ActivityTwo">
+    android:padding="16dp">
+
+    <!-- Imagen en la parte superior -->
+    <ImageView
+        android:id="@+id/imgLogoTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_dgtic_color_300"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"/>
+
+    <!-- Contenedor para centrar los componentes -->
+    <LinearLayout
+        android:id="@+id/centerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Texto para mostrar los datos recibidos -->
+        <TextView
+            android:id="@+id/tvReceivedDataTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datos recibidos: "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Botón para regresar datos a ActivityOne -->
+        <Button
+            android:id="@+id/btnReturnData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regresar a Activity One"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
