@@ -1,6 +1,7 @@
 package com.dgtic.androidmodule1.ejercise.home.carlogarcia
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -38,6 +39,9 @@ class InfoActivity : AppCompatActivity() {
 
         val btnSelectOfferOne = findViewById<Button>(R.id.btnSelectOfferOne)
         val btnSelectOfferTwo = findViewById<Button>(R.id.btnSelectOfferTwo)
+
+        btnSelectOfferOne.setBackgroundColor(Color.argb(255,0,64,121))
+        btnSelectOfferTwo.setBackgroundColor(Color.argb(255,0,64,121))
 
         intent.extras?.let {
             if (it.containsKey("EXTRA_NAME")) {

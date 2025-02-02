@@ -57,11 +57,11 @@ class CarloGarciaMainActivity : AppCompatActivity() {
 
         // Recupera btnShowData y cambia su color
         val btnShowInstagram = findViewById<Button>(R.id.btnShowInstagram)
-        btnShowInstagram.setBackgroundColor(Color.argb(255, 10,60,10))
+        btnShowInstagram.setBackgroundColor(Color.argb(255, 0,64,121))
 
         // Recupera btnShowData y cambia su color
         val btnOfferSelect = findViewById<Button>(R.id.btnOfferSelect)
-        btnOfferSelect.setBackgroundColor(Color.argb(255, 54,13,61))
+        btnOfferSelect.setBackgroundColor(Color.argb(255, 0,64,121))
 
         // Recupera tvTeamUserName
         val tvTeamUserName = findViewById<TextView>(R.id.tvTeamUserName)
