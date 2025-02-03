@@ -26,5 +26,12 @@ class VidalMainActivity : AppCompatActivity() {
             val intent = Intent(this, LifeCycleActivity::class.java)
             startActivity(intent)
         }
+
+        //Button with text "Exercise 2"
+        val btnExercise2 = findViewById<Button>(R.id.btnExercise2)
+        btnExercise2.setOnClickListener {
+            val intent = Intent(this, VidalIntentActivity::class.java)
+            startActivity(intent)
+        }
     }//End override onCreate
 }

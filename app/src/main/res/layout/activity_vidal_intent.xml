@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Developer: Vidal Ruiz
-  Description: Interface for All task for vidal.
-        Date : February 2nd, 2025
+  Description: Interface for Intent activity: Open URL
+Creation Date: February 3nd, 2025
 -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,10 +12,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.vidalruiz.VidalMainActivity">
+    tools:context=".ejercise.home.vidalruiz.VidalIntentActivity">
 
-
-    <!-- White Background UNAM DGIT -->
+    <!--White Background  for UNAM DGTIC -->
     <View
         android:id="@+id/vBackground"
         android:layout_width="wrap_content"
@@ -24,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Logo -->
+    <!-- Logo UNAM DGTIC-->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
@@ -39,7 +38,7 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_marginTop="40dp"
-        android:text="Vidal's Main page"
+        android:text="Vidal's Exercise 1.2"
         android:textColor="#FFC107"
         android:fontFamily="sans-serif-black"
         android:textSize="32sp"
@@ -51,7 +50,7 @@
     <!-- Subtitle-->
     <TextView
         android:id="@+id/tvSubTitle"
-        android:text="Exercice 1"
+        android:text="Implicit Intent"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="italic"
@@ -61,88 +60,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-
+    <!-- Task description-->
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:gravity="center"
         android:textSize="16sp"
-        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
-        android:text="Tasks:"/>
+        android:text="An Activity that contains a button, which, when clicked, sends an implicit Intent to open a URL in a web browser."/>
 
-    <TextView
-        android:id="@+id/tvActivity1"
-        android:gravity="center"
+    <!-- Button that opens the URL -->
+    <Button
+        android:text="Open URL"
+        android:id="@+id/btnVidalOpenURL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDescription"
-        android:layout_marginTop="20dp"
-        android:text="An Activity that implements its main lifecycle methods, including a Toast component that displays a text string corresponding to the lifecycle state the Activity has entered."/>
-
-    <Button
-        android:text="Life cycle activity"
-        android:id="@+id/btnExercise1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActivity1"
         />
 
-    <TextView
-        android:id="@+id/tvActivity2"
-        android:gravity="center"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExercise1"
-        android:layout_marginTop="20dp"
-        android:text="An Activity that contains a button, which, when clicked, sends an implicit Intent to open a URL in a web browser."/>
-
+    <!--Return button-->
     <Button
-        android:text="Implicit Intent"
-        android:id="@+id/btnExercise2"
+        android:text="Return Vidal's Main Page"
+        android:id="@+id/btnReturnVidalMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActivity2"
-        />
-    <TextView
-        android:id="@+id/tvActivity3"
-        android:gravity="center"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExercise2"
-        android:layout_marginTop="20dp"
-        android:text="Activity 1: Creates Activity 2 and sends parameters. Additionally, it has the option to receive returned parameters once Activity 2 finishes executing.
-            Activity 2: Contains a button that, when clicked, ends its execution and returns information to Activity 1."/>
-
-    <Button
-        android:text="Intent - PutExtra"
-        android:id="@+id/btnExercise3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActivity3"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
