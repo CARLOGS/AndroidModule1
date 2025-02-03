@@ -16,6 +16,10 @@
             android:name=".ejercise.home.vidalruiz.VidalMainActivity"
             android:exported="false" />
         <activity
+            android:name=".ejercise.home.vidalruiz.LifeCycleActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ejercise.home.alexissantos.ActivityTwo"
             android:exported="false" />
         <activity

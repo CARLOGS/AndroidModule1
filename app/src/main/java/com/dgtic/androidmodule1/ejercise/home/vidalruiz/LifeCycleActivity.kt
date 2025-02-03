@@ -13,9 +13,11 @@
  */
 package com.dgtic.androidmodule1.ejercise.home.vidalruiz
 
+import android.content.Intent
 import android.os.Bundle
 import com.dgtic.androidmodule1.R
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -57,6 +59,13 @@ class LifeCycleActivity: AppCompatActivity() {
 
         // Displays a Toast message indicating that the activity has entered onCreate
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show()
+
+        // Set up btnReturnVidalMainPage button, which returns to VidalMainActivity.
+        val btnReturnVidalMainPage = findViewById<Button>(R.id.btnReturnVidalMainPage)
+        btnReturnVidalMainPage.setOnClickListener {
+            val intent = Intent(this, VidalMainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
