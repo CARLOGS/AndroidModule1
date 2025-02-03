@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +6,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.TeamActivity">
+    tools:context=".ejercise.home.vidalruiz.VidalMainActivity">
+
+
     <!-- Background -->
     <View
         android:id="@+id/vBackground"
@@ -31,22 +32,22 @@
     <!-- Title -->
     <TextView
         android:id="@+id/tvTitle"
-        android:text="Android Activity Explorer"
+        android:layout_marginTop="40dp"
+        android:text="Vidal's Main page"
         android:textColor="#FFC107"
         android:fontFamily="sans-serif-black"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vBackground"
-        app:layout_constraintBottom_toTopOf="@+id/btnCarlo"/>
+        app:layout_constraintTop_toBottomOf="@+id/vBackground" />
     <!-- Subtitle-->
     <TextView
         android:id="@+id/tvSubTitle"
-        android:text="Ejercicio 1"
+        android:text="Exercice 1"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,110 +55,88 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
+
     <TextView
-        android:id="@+id/tvTeamTitle"
-        android:text="Actividades del equipo"
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         android:textSize="16sp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
+        android:text="Tasks:"/>
+
+    <TextView
+        android:id="@+id/tvActivity1"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnCarlo" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        android:layout_marginTop="20dp"
+        android:text="An Activity that implements its main lifecycle methods, including a Toast component that displays a text string corresponding to the lifecycle state the Activity has entered."/>
 
     <Button
-        android:text="Ir a Carlo García Sánchez"
-        android:id="@+id/btnCarlo"
+        android:text="Life cycle activity"
+        android:id="@+id/btnExercise1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvActivity1"
+        />
+
+    <TextView
+        android:id="@+id/tvActivity2"
+        android:gravity="center"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnExercise1"
+        android:layout_marginTop="20dp"
+        android:text="An Activity that contains a button, which, when clicked, sends an implicit Intent to open a URL in a web browser."/>
 
     <Button
-        android:text="Ir a Lisset Noriega Domínguez"
-        android:id="@+id/btnLisset"
+        android:text="Implicit Intent"
+        android:id="@+id/btnExercise2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCarlo" />
+        app:layout_constraintTop_toBottomOf="@+id/tvActivity2"
+        />
+    <TextView
+        android:id="@+id/tvActivity3"
+        android:gravity="center"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnExercise2"
+        android:layout_marginTop="20dp"
+        android:text="Activity 1: Creates Activity 2 and sends parameters. Additionally, it has the option to receive returned parameters once Activity 2 finishes executing.
+            Activity 2: Contains a button that, when clicked, ends its execution and returns information to Activity 1."/>
 
     <Button
-        android:text="Ir a Christian Alexis Santos"
-        android:id="@+id/btnAlxis"
+        android:text="Intent - PutExtra"
+        android:id="@+id/btnExercise3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLisset" />
-
-    <Button
-        android:text="Ir a Vidal Ruiz Vargas"
-        android:id="@+id/btnVidal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAlxis" />
-
-
-
-
-    <TextView
-        android:id="@+id/tvDate"
-        android:text="Loading date..."
-        android:textSize="16dp"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnVidal" />
-
-
-    <TextView
-        android:id="@+id/tvFooterLeft"
-        android:text="Profesor: Alan Espinosa"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvEdition" />
-
-    <TextView
-        android:id="@+id/tvFooterRight"
-        android:text="Módulo 4"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvEdition" />
-    <TextView
-        android:id="@+id/tvEdition"
-        android:text="Desarrollo de aplicaciones para dispositivos móviles 13a"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvActivity3"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

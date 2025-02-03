@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.alexissantos.FlowActivity
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalMainActivity
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -72,9 +73,13 @@ class TeamActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Botón para ir al Activity de Vidal
+        // Button with text "Ir a Vidal"
         val btnVidal = findViewById<Button>(R.id.btnVidal)
         btnVidal.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnVidal.setOnClickListener {
+            val intent = Intent(this, VidalMainActivity::class.java)
+            startActivity(intent)
+        }
 
         //Set current date.
         val tvDate = findViewById<TextView> (R.id.tvDate)
