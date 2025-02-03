@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Developer: Vidal Ruiz
-  Description: Interface for All task for vidal.
-        Date : February 2nd, 2025
--->
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,10 +6,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.vidalruiz.VidalMainActivity">
-
-
-    <!-- White Background UNAM DGIT -->
+    tools:context=".ejercise.home.vidalruiz.VidalIntentWithParameters">
+    <!--White Background  for UNAM DGTIC -->
     <View
         android:id="@+id/vBackground"
         android:layout_width="wrap_content"
@@ -24,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Logo -->
+    <!-- Logo UNAM DGTIC-->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
@@ -39,7 +31,7 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_marginTop="40dp"
-        android:text="Vidal's Main page"
+        android:text="Vidal's Exercise 1.3"
         android:textColor="#FFC107"
         android:fontFamily="sans-serif-black"
         android:textSize="32sp"
@@ -51,7 +43,7 @@
     <!-- Subtitle-->
     <TextView
         android:id="@+id/tvSubTitle"
-        android:text="Exercice 1"
+        android:text="Using Parameters with Intents"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="italic"
@@ -61,87 +53,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
-
+    <!-- Task description-->
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:gravity="center"
         android:textSize="16sp"
-        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
-        android:text="Tasks:"/>
+        android:text="This Activity receives parameters from an Intent and displays them on the screen.
+              It extracts data such as name, age, and marital status from the Intent extras
+              and updates a TextView accordingly. Additionally, it returns a result parameter
+              indicating whether the received data was processed successfully."/>
 
+    <!-- Button that opens the URL -->
     <TextView
-        android:id="@+id/tvActivity1"
-        android:gravity="center"
+        android:id="@+id/tvParametersTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="#FFC107"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDescription"
-        android:layout_marginTop="20dp"
-        android:text="An Activity that implements its main lifecycle methods, including a Toast component that displays a text string corresponding to the lifecycle state the Activity has entered."/>
-
-    <Button
-        android:text="Life cycle activity"
-        android:id="@+id/btnExercise1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActivity1"
-        />
+        android:text="Parameters received"/>
 
     <TextView
-        android:id="@+id/tvActivity2"
-        android:gravity="center"
-
-        android:layout_width="wrap_content"
+        android:id="@+id/tvParameters"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExercise1"
-        android:layout_marginTop="20dp"
-        android:text="An Activity that contains a button, which, when clicked, sends an implicit Intent to open a URL in a web browser."/>
+        app:layout_constraintTop_toBottomOf="@+id/tvParametersTitle"
+        android:text="Getting parameters.... "/>
 
+    <!--Return button-->
     <Button
-        android:text="Implicit Intent"
-        android:id="@+id/btnExercise2"
+        android:text="Return Main Page With Parameters"
+        android:id="@+id/btnReturnVidalMainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActivity2"
-        />
-    <TextView
-        android:id="@+id/tvActivity3"
-        android:gravity="center"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnExercise2"
-        android:layout_marginTop="20dp"
-        android:text="Send parameters to an activity and receives results from it"/>
-
-    <Button
-        android:text="Intent with parameters"
-        android:id="@+id/btnExercise3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActivity3"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
