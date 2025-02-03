@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +12,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.alexissantos.FlowActivity
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 /**
  * Pantalla principal para mostrar las opciones iniciales del equipo
@@ -71,5 +75,10 @@ class TeamActivity : AppCompatActivity() {
         // Botón para ir al Activity de Vidal
         val btnVidal = findViewById<Button>(R.id.btnVidal)
         btnVidal.setBackgroundColor(Color.argb(255, 0,64,121))
+
+        //Set current date.
+        val tvDate = findViewById<TextView> (R.id.tvDate)
+        val currentDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        tvDate.text = currentDate
     }
 }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ejercise.home.TeamActivity">
-
+    <!-- Background -->
     <View
         android:id="@+id/vBackground"
         android:layout_width="wrap_content"
@@ -16,24 +17,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- Background -->
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/logo_dgtic_color_300"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerInside"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="Android Activity Explorer"
+        android:textColor="#FFC107"
+        android:fontFamily="sans-serif-black"
+        android:textSize="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vBackground"
+        app:layout_constraintBottom_toTopOf="@+id/btnCarlo"/>
+
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:text="Ejercicio 1"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTeamTitle"
+        android:text="Actividades del equipo"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCarlo" />
+
 
     <Button
         android:text="Ir a Carlo García Sánchez"
         android:id="@+id/btnCarlo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="250dp"
-        android:textAlignment="textStart"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,8 +84,8 @@
         android:id="@+id/btnLisset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="250dp"
-        android:textAlignment="textStart"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCarlo" />
@@ -55,8 +95,8 @@
         android:id="@+id/btnAlxis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="250dp"
-        android:textAlignment="textStart"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLisset" />
@@ -66,57 +106,27 @@
         android:id="@+id/btnVidal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:width="250dp"
-        android:textAlignment="textStart"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAlxis" />
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="Ejercicio 1"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif-black"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vBackground"
-        app:layout_constraintBottom_toTopOf="@+id/btnCarlo"/>
+
+
 
     <TextView
-        android:id="@+id/tvSubTitle"
-        android:text="Activities"
+        android:id="@+id/tvDate"
+        android:text="Loading date..."
+        android:textSize="16dp"
         android:textColor="@color/white"
-        android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@id/btnVidal" />
 
-    <TextView
-        android:id="@+id/tvTeamTitle"
-        android:text="Integrantes del equipo:"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnCarlo" />
-
-    <TextView
-        android:id="@+id/tvEdition"
-        android:text="Desarrollo de aplicaciones para dispositivos móviles 13a"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/tvFooterLeft"
@@ -139,5 +149,15 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tvEdition" />
+    <TextView
+        android:id="@+id/tvEdition"
+        android:text="Desarrollo de aplicaciones para dispositivos móviles 13a"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
