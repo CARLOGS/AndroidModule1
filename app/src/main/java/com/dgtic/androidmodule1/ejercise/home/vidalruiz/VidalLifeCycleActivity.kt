@@ -47,7 +47,7 @@ class VidalLifeCycleActivity: AppCompatActivity() {
         enableEdgeToEdge()
 
         // Sets the layout for this activity
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_vidal_life_cycle)
 
         // Adjusts padding to fit system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

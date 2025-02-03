@@ -83,7 +83,7 @@ class TeamActivity : AppCompatActivity() {
 
         //Set current date.
         val tvDate = findViewById<TextView> (R.id.tvDate)
-        val currentDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
+        val currentDate = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date())
         tvDate.text = currentDate
     }
 }

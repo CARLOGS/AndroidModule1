@@ -26,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
+import com.dgtic.androidmodule1.ejercise.home.TeamActivity
 
 class VidalMainActivity : AppCompatActivity() {
 
@@ -65,7 +66,7 @@ class VidalMainActivity : AppCompatActivity() {
             insets
         }
 
-        // Button to launch LifeCycleActivity (Exercise 1)
+        // Button to launch VidalLifeCycleActivity (Exercise 1)
         val btnExercise1 = findViewById<Button>(R.id.btnExercise1)
         btnExercise1.setOnClickListener {
             val intent = Intent(this, VidalLifeCycleActivity::class.java)
@@ -88,5 +89,13 @@ class VidalMainActivity : AppCompatActivity() {
             intent.putExtra("EXTRA_AGE", 49)
             register.launch(intent)
         }
+
+        // Button to return to MainActivity (Home)
+        val btnReturnMainPage = findViewById<Button>(R.id.btnReturnMainPage)
+        btnReturnMainPage.setOnClickListener {
+            val intent = Intent(this, TeamActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
