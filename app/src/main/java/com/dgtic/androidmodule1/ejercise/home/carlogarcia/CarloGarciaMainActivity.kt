@@ -6,6 +6,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
+import com.dgtic.androidmodule1.ejercise.home.TeamActivity
 
 /**
  * Pantalla inicial del Ejercicio 1
@@ -26,22 +29,6 @@ import com.dgtic.androidmodule1.R
  * fecha: 2025-02-01
  */
 class CarloGarciaMainActivity : AppCompatActivity() {
-    // Para esperar respuesta del SecondActivity
-    private val register = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        // TextView para mostrar la oferta seleccionada
-        val tvOfferSelected = findViewById<TextView>(R.id.tvOfferSelected)
-
-        // Muestra la oferta seleccionada
-        if (result.resultCode == RESULT_OK) {
-            val offerSelected = result.data?.getStringExtra("EXTRA_OFFER")
-            val salarySelected = result.data?.getFloatExtra("EXTRA_SALARY", 0.0f)
-
-            tvOfferSelected.text = "Resultado: $offerSelected Sueldo: $salarySelected"
-        } else {
-            tvOfferSelected.text = "Resultado: No sleccionó oferta"
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -55,27 +42,37 @@ class CarloGarciaMainActivity : AppCompatActivity() {
             insets
         }
 
-        // Recupera btnShowData y cambia su color
+        // Recupera controles
+        val btnLifeCycle = findViewById<Button>(R.id.btnLifeCycle)
         val btnShowInstagram = findViewById<Button>(R.id.btnShowInstagram)
+        val btnFirstActivity = findViewById<Button>(R.id.btnFirstActivity)
+        val btnGoHome = findViewById<ImageView>(R.id.btnGoHome)
+        val btnBackward = findViewById<ImageView>(R.id.btnBackward)
+
+        // Cambio de color de fondo
         btnShowInstagram.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnFirstActivity.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnLifeCycle.setBackgroundColor(Color.argb(255, 0,64,121))
 
-        // Recupera btnShowData y cambia su color
-        val btnOfferSelect = findViewById<Button>(R.id.btnOfferSelect)
-        btnOfferSelect.setBackgroundColor(Color.argb(255, 0,64,121))
-
-        // Recupera tvTeamUserName
-        val tvTeamUserName = findViewById<TextView>(R.id.tvTeamUserName)
-
-        // Muestra el nombre que se pasó como parámetro desde el TeamActivity
-        intent.extras?.let {
-            if (it.containsKey("EXTRA_USER_NAME")) {
-                val userName = it.getString("EXTRA_USER_NAME")
-
-                tvTeamUserName.text = userName
-            }
+        // Regresa al home
+        btnGoHome.setOnClickListener {
+            val intent = Intent(this, TeamActivity::class.java)
+            startActivity(intent)
         }
 
-        // Abre la URL de Instagram
+        // Regresa
+        btnBackward.setOnClickListener {
+            val intent = Intent(this, TeamActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Abre el Activity de LifeCicle
+        btnLifeCycle.setOnClickListener {
+            val intent = Intent(this, LifeCycleActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Abre URL de Instagram
         btnShowInstagram.setOnClickListener {
             // Logger
             Log.e("Open URL", "Abriendo Instagram")
@@ -84,87 +81,14 @@ class CarloGarciaMainActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(urlIntent, "Abrir con:"))
         }
 
-        // Abre la Pantalla de Información
-        btnOfferSelect.setOnClickListener {
-            // Logger
-            Log.e("Show Info", "Mostrando información")
-
-            val languages = arrayOf("Java", "JavaScript", "Python", "C#", "Basic")
-            val dbs = arrayOf("SQL Server", "Oracle", "MySQL", "DB2")
-
-            val infoIntent = Intent(this, InfoActivity::class.java).apply {
-                putExtra("EXTRA_NAME", "Carlo García Sánchez")
-                putExtra("EXTRA_AGE", 57)
-                putExtra("EXTRA_GENDER", "M") // Male
-                putExtra("EXTRA_STUDY", "Ingeniero en computación")
-                putExtra("EXTRA_BORN_DATE", "1967-09-04")
-                putExtra("EXTRA_EXPERIENCE", 20) // Años de experiencia
-                putExtra("EXTRA_LANGUAGES", languages)
-                putExtra("EXTRA_DB", dbs)
-                putExtra("EXTRA_JOB", "IT Maganer")
-                putExtra("EXTRA_HAS_WORK", false)
+        // Abre la Pantalla irstActivity
+        btnFirstActivity.setOnClickListener {
+            val intFirstActivity = Intent(this, FirstActivity::class.java).apply {
+                // Envía nombre como parámetro para mostrar en el Activity
+                putExtra("EXTRA_USER_NAME", "Carlo García Sánchez")
             }
 
-            // Con esto se espera un result
-            register.launch(infoIntent)
+            startActivity(intFirstActivity)
         }
-
-        // Muestra mensaje
-        Toast.makeText(this, "Entró en onCreate", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onCreate")
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        // Muestra mensaje
-        Toast.makeText(this, "Entró en onStart", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        Toast.makeText(this, "Entró en onResume", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        // Muestra mensaje
-        Toast.makeText(this, "Entró en onPause", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-
-        // Muestra mensaje
-        Toast.makeText(this, "Entró en onStop", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        // Muestra mensaje
-        Toast.makeText(this, "Entró en onDestroy", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onDestroy")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-
-        // Muestra mensaje
-        Toast.makeText(this, "Entró en onRestart", Toast.LENGTH_SHORT).show()
-        // Logger
-        Log.e("LifeCicle", "Entró en onRestart")
     }
 }

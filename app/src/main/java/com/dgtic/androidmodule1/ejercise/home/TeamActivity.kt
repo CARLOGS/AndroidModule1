@@ -53,10 +53,7 @@ class TeamActivity : AppCompatActivity() {
         val btnCarlo = findViewById<Button>(R.id.btnCarlo)
         btnCarlo.setBackgroundColor(Color.argb(255, 0,64,121))
         btnCarlo.setOnClickListener {
-            val carloIntent = Intent(this, CarloGarciaMainActivity::class.java).apply {
-                // Envía nombre como parámetro para mostrar en el Activity
-                putExtra("EXTRA_USER_NAME", "Carlo García Sánchez")
-            }
+            val carloIntent = Intent(this, CarloGarciaMainActivity::class.java)
 
             // Abre CarloGarciaMainActivity sin esperar respuesta
             startActivity(carloIntent)

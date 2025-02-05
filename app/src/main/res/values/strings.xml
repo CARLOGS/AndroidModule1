@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidModule1</string>
+    <string name="backward"><![CDATA[< Cerrar]]></string>
 </resources>

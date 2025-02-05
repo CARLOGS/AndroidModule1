@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AndroidModule1"
         tools:targetApi="31">
         <activity
+            android:name=".ejercise.home.carlogarcia.FirstActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.carlogarcia.LifeCycleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ejercise.home.lissetnoriega.LissetSecondInfoActivity"
             android:exported="false" />
         <activity
@@ -60,32 +66,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ejercise.classroom.explicitintent.SecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ejercise.classroom.explicitintent.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ejercise.classroom.ImplicitIntentActivity"
-            android:exported="true">
-
-            <!-- Hacer public el Intent para aparecer en el Intent Chooser de otra App -->
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <data android:mimeType="plaintext" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity android:name=".ejercise.classroom.ExampleManualCreationActivity" />
-        <activity
-            android:name=".ejercise.classroom.ExampleCreationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ejercise.classroom.LifeCicleActivity"
-            android:exported="false" />
     </application>
-
 </manifest>
