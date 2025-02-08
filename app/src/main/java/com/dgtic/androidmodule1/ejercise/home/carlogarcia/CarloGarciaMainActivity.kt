@@ -81,7 +81,7 @@ class CarloGarciaMainActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(urlIntent, "Abrir con:"))
         }
 
-        // Abre la Pantalla irstActivity
+        // Abre la Pantalla FirstActivity
         btnFirstActivity.setOnClickListener {
             val intFirstActivity = Intent(this, FirstActivity::class.java).apply {
                 // Envía nombre como parámetro para mostrar en el Activity
