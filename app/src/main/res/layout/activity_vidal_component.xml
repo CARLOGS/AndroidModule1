@@ -54,4 +54,14 @@
         android:src="@mipmap/ic_launcher_round"
         android:layout_width="200dp"
         android:layout_height="wrap_content"/>
+
+
+    <CheckBox
+        android:id="@+id/chkExample"
+        app:layout_constraintTop_toBottomOf="@id/included"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="I agree with everything..."
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
