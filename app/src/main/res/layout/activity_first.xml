@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.carlogarcia.CarloGarciaMainActivity">
+    tools:context=".ejercise.home.carlogarcia.FirstActivity">
 
     <!--Imagen DGTIC -->
     <ImageView
@@ -40,57 +40,8 @@
         app:layout_constraintStart_toEndOf="@id/btnGoHome"
         app:layout_constraintBottom_toBottomOf="@id/btnGoHome" />
 
-    <!-- Botón para dos Activities -->
-    <Button
-        android:text="Ciclo de vida Activity"
-        android:id="@+id/btnLifeCycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:width="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnFirstActivity" />
-
-    <!-- Botón para dos Activities -->
-    <Button
-        android:id="@+id/btnFirstActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="200dp"
-        android:text="Dos Activities"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Botón ir a Instagram-->
-    <Button
-        android:text="Abrir URL"
-        android:id="@+id/btnShowInstagram"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="textStart"
-        android:width="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFirstActivity" />
-
-    <!-- Imagen de la lupa-->
-    <ImageView
-        android:id="@+id/imgVer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/logo_instagram"
-        app:layout_constraintEnd_toStartOf="@+id/btnShowInstagram"
-        app:layout_constraintTop_toTopOf="@+id/btnShowInstagram" />
-
     <!-- Nombre del integrante del equipo -->
     <TextView
-        android:text="Carlo García Sánchez"
         android:id="@+id/tvTeamUserName"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="20dp"
@@ -100,5 +51,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-        app:layout_constraintBottom_toTopOf="@+id/btnFirstActivity" />
+        app:layout_constraintBottom_toTopOf="@+id/btnJobSelector" />
+
+    <!-- Logo Instagram -->
+    <Button
+        android:id="@+id/btnJobSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar trabajo"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgInstagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_ver"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnJobSelector"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Muestra respuesta del segundo Activity -->
+    <TextView
+        android:id="@+id/tvOfferSelected"
+        android:textSize="15dp"
+        android:textAlignment="viewStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnJobSelector" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

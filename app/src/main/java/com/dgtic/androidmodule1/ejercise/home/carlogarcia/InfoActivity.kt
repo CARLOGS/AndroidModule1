@@ -4,12 +4,14 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
+import com.dgtic.androidmodule1.ejercise.home.TeamActivity
 
 /**
  * Pantalla para mostrar el perfil y ofertas de trabajo
@@ -36,12 +38,29 @@ class InfoActivity : AppCompatActivity() {
         val tvDbs = findViewById<TextView>(R.id.tvDbs)
         val tvJob = findViewById<TextView>(R.id.tvJob)
         val tvHasWork = findViewById<TextView>(R.id.tvHasWork)
+        val btnGoHome = findViewById<ImageView>(R.id.btnGoHome)
+        val btnBackward = findViewById<ImageView>(R.id.btnBackward)
 
         val btnSelectOfferOne = findViewById<Button>(R.id.btnSelectOfferOne)
         val btnSelectOfferTwo = findViewById<Button>(R.id.btnSelectOfferTwo)
 
         btnSelectOfferOne.setBackgroundColor(Color.argb(255,0,64,121))
         btnSelectOfferTwo.setBackgroundColor(Color.argb(255,0,64,121))
+
+        // Regresa al home
+        btnGoHome.setOnClickListener {
+            val intent = Intent(this, TeamActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Regresa
+        btnBackward.setOnClickListener {
+            setResult(RESULT_CANCELED)
+
+            // Destruye/cierra este Activity
+            finish()
+        }
+
 
         intent.extras?.let {
             if (it.containsKey("EXTRA_NAME")) {

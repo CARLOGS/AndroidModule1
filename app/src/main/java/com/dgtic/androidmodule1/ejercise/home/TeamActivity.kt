@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.alexissantos.FlowActivity
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
+import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.LissetMainActivity
 import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalMainActivity
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -52,10 +53,7 @@ class TeamActivity : AppCompatActivity() {
         val btnCarlo = findViewById<Button>(R.id.btnCarlo)
         btnCarlo.setBackgroundColor(Color.argb(255, 0,64,121))
         btnCarlo.setOnClickListener {
-            val carloIntent = Intent(this, CarloGarciaMainActivity::class.java).apply {
-                // Envía nombre como parámetro para mostrar en el Activity
-                putExtra("EXTRA_USER_NAME", "Carlo García Sánchez")
-            }
+            val carloIntent = Intent(this, CarloGarciaMainActivity::class.java)
 
             // Abre CarloGarciaMainActivity sin esperar respuesta
             startActivity(carloIntent)
@@ -64,6 +62,10 @@ class TeamActivity : AppCompatActivity() {
         // Botón para ir al Activity de Lisset
         val btnLisset = findViewById<Button>(R.id.btnLisset)
         btnLisset.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnLisset.setOnClickListener {
+            val lissetIntent = Intent(this, LissetMainActivity::class.java)
+            startActivity(lissetIntent)
+        }
 
         // Botón para ir al Activity de Alexis
         val btnAlxis = findViewById<Button>(R.id.btnAlxis)
