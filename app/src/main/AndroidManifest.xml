@@ -13,13 +13,18 @@
         android:theme="@style/Theme.AndroidModule1"
         tools:targetApi="31">
         <activity
-            android:name=".classroom.graphiccomponent.vidalruiz.VidalComponentActivity"
+            android:name=".classroom.graphiccomponent.vidalruiz.recycleview.VidalRecyclerViewActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".classroom.graphiccomponent.vidalruiz.VidalComponentActivity"
+            android:exported="false">
         </activity>
         <activity
             android:name=".classroom.graphiccomponent.vidalruiz.VidalActivityConstrainLayout"
@@ -53,9 +58,7 @@
             android:exported="false" />
         <activity
             android:name=".ejercise.home.TeamActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".ejercise.classroom.explicitintent.SecondActivity"
             android:exported="false" />
