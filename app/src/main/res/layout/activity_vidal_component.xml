@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".classroom.graphiccomponent.vidalruiz.VidalComponentActivity">
+
+<TextView
+    android:id="@+id/tvTitle"
+    android:text="This is a text view"
+    android:textSize="26sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+<EditText
+    android:id="@+id/etUsername"
+    android:text="Username"
+    android:textColor="@color/design_default_color_error"
+    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_width="250dp"
+    android:layout_marginTop="30dp"
+    android:inputType="textPassword"
+    android:layout_height="wrap_content"/>
+
+<Button
+    android:id="@+id/btnSend"
+    android:text="Send"
+    app:layout_constraintTop_toBottomOf="@id/etUsername"
+    app:layout_constraintStart_toStartOf="parent"
+    android:textColor="@color/white"
+    android:background="@android:color/holo_orange_dark"
+    android:layout_marginTop="30dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/imgVer"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSend"
+        android:layout_marginTop="30dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+    <ImageButton
+        android:id="@+id/included"
+        app:layout_constraintTop_toBottomOf="@id/imgVer"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
