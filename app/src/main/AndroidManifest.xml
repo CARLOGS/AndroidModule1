@@ -13,10 +13,16 @@
         android:theme="@style/Theme.AndroidModule1"
         tools:targetApi="31">
         <activity
-            android:name=".ejercise.home.carlogarcia.FirstActivity"
+            android:name=".ejercise.home.carlogarcia.CarloGarciaMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.carlogarcia.LifeCycleActivity"
+            android:name=".ejercise.home.carlogarcia.exercise2.Exercise2MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.carlogarcia.exercise1.FirstActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.carlogarcia.exercise1.LifeCycleActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.lissetnoriega.LissetSecondInfoActivity"
@@ -52,10 +58,10 @@
             android:name=".ejercise.home.alexissantos.FlowActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.carlogarcia.InfoActivity"
+            android:name=".ejercise.home.carlogarcia.exercise1.JobsActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.carlogarcia.CarloGarciaMainActivity"
+            android:name=".ejercise.home.carlogarcia.exercise1.Exercise1MainActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.TeamActivity"
@@ -67,4 +73,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

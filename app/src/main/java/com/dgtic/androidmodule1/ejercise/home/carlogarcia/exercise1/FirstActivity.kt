@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.carlogarcia
+package com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1
 
 import android.content.Intent
 import android.graphics.Color
@@ -62,7 +62,7 @@ class FirstActivity : AppCompatActivity() {
 
         // Regresa
         btnBackward.setOnClickListener {
-            val intent = Intent(this, CarloGarciaMainActivity::class.java)
+            val intent = Intent(this, Exercise1MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -82,7 +82,7 @@ class FirstActivity : AppCompatActivity() {
             val languages = arrayOf("Java", "JavaScript", "Python", "C#", "Basic")
             val dbs = arrayOf("SQL Server", "Oracle", "MySQL", "DB2")
 
-            val infoIntent = Intent(this, InfoActivity::class.java).apply {
+            val infoIntent = Intent(this, JobsActivity::class.java).apply {
                 putExtra("EXTRA_NAME", "Carlo García Sánchez")
                 putExtra("EXTRA_AGE", 57)
                 putExtra("EXTRA_GENDER", "M") // Male

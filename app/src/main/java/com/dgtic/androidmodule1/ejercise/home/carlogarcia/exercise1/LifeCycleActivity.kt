@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.carlogarcia
+package com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1
 
 import android.content.Intent
 import android.graphics.Color
@@ -51,12 +51,12 @@ class LifeCycleActivity : AppCompatActivity() {
 
         // Regresa
         btnBackward.setOnClickListener {
-            val intent = Intent(this, CarloGarciaMainActivity::class.java)
+            val intent = Intent(this, Exercise1MainActivity::class.java)
             startActivity(intent)
         }
 
         btnClose.setOnClickListener {
-            val intent = Intent(this, CarloGarciaMainActivity::class.java)
+            val intent = Intent(this, Exercise1MainActivity::class.java)
             startActivity(intent)
 
             // Destruye/cierra este Activity

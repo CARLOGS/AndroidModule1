@@ -2,40 +2,23 @@ package com.dgtic.androidmodule1.ejercise.home.carlogarcia
 
 import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.TeamActivity
+import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1.Exercise1MainActivity
+import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise2.Exercise2MainActivity
 
-/**
- * Pantalla inicial del Ejercicio 1
- *
- * Descripción:
- *
- * - Muestra los eventos del ciclo de vida del Activity en el Toast y Logcat
- *
- * @author Carlo García Sánchez
- * fecha: 2025-02-01
- */
 class CarloGarciaMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         enableEdgeToEdge()
-
         setContentView(R.layout.activity_carlo_garcia_main)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -43,16 +26,18 @@ class CarloGarciaMainActivity : AppCompatActivity() {
         }
 
         // Recupera controles
-        val btnLifeCycle = findViewById<Button>(R.id.btnLifeCycle)
-        val btnShowInstagram = findViewById<Button>(R.id.btnShowInstagram)
-        val btnFirstActivity = findViewById<Button>(R.id.btnFirstActivity)
+        val btnExercise1 = findViewById<Button>(R.id.btnExercise1)
+        val btnExercise2 = findViewById<Button>(R.id.btnExercise2)
+        val btnHomework = findViewById<Button>(R.id.btnHomework)
         val btnGoHome = findViewById<ImageView>(R.id.btnGoHome)
         val btnBackward = findViewById<ImageView>(R.id.btnBackward)
 
         // Cambio de color de fondo
-        btnShowInstagram.setBackgroundColor(Color.argb(255, 0,64,121))
-        btnFirstActivity.setBackgroundColor(Color.argb(255, 0,64,121))
-        btnLifeCycle.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnExercise1.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnExercise2.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnHomework.setBackgroundColor(Color.argb(255, 0,64,121))
+
+        btnHomework.isEnabled = false
 
         // Regresa al home
         btnGoHome.setOnClickListener {
@@ -66,29 +51,16 @@ class CarloGarciaMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Abre el Activity de LifeCicle
-        btnLifeCycle.setOnClickListener {
-            val intent = Intent(this, LifeCycleActivity::class.java)
+        // Exercise 1
+        btnExercise1.setOnClickListener {
+            val intent = Intent(this, Exercise1MainActivity::class.java)
             startActivity(intent)
         }
 
-        // Abre URL de Instagram
-        btnShowInstagram.setOnClickListener {
-            // Logger
-            Log.e("Open URL", "Abriendo Instagram")
-
-            val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/carlo.garciasanchez.7/"))
-            startActivity(Intent.createChooser(urlIntent, "Abrir con:"))
-        }
-
-        // Abre la Pantalla FirstActivity
-        btnFirstActivity.setOnClickListener {
-            val intFirstActivity = Intent(this, FirstActivity::class.java).apply {
-                // Envía nombre como parámetro para mostrar en el Activity
-                putExtra("EXTRA_USER_NAME", "Carlo García Sánchez")
-            }
-
-            startActivity(intFirstActivity)
+        // Exercise 2
+        btnExercise2.setOnClickListener {
+            val intent = Intent(this, Exercise2MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

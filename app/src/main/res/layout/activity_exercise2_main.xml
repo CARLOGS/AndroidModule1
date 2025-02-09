@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.carlogarcia.exercise1.LifeCycleActivity">
+    tools:context=".ejercise.home.carlogarcia.exercise2.Exercise2MainActivity">
 
-    <!-- Logo DGTIC -->
+    <!--Imagen DGTIC -->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="wrap_content"
@@ -18,14 +18,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <!-- Ir a pantalla de inicio -->
     <ImageView
         android:id="@+id/btnGoHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:src="@drawable/home"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
         app:layout_constraintTop_toBottomOf="@id/imgLogo" />
 
     <!-- Backward -->
@@ -33,24 +47,24 @@
         android:id="@+id/btnBackward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:src="@drawable/back"
         android:textAlignment="textStart"
         app:layout_constraintStart_toEndOf="@id/btnGoHome"
         app:layout_constraintBottom_toBottomOf="@id/btnGoHome" />
 
-    <!-- Botón para regresar -->
-    <Button
-        android:id="@+id/btnClose"
+    <TextView
+        android:id="@+id/lblLayout"
+        android:text="@string/layout"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/glTop"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="200dp"
-        android:text="@string/backward"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spnLayout"
+        app:layout_constraintTop_toBottomOf="@+id/lblLayout"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>

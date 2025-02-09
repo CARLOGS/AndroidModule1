@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.carlogarcia.InfoActivity">
+    tools:context=".ejercise.home.carlogarcia.exercise1.JobsActivity">
 
     <!--Logotipo-->
     <ImageView

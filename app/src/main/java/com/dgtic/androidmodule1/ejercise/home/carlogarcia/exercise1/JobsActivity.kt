@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.carlogarcia
+package com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1
 
 import android.content.Intent
 import android.graphics.Color
@@ -17,7 +17,7 @@ import com.dgtic.androidmodule1.ejercise.home.TeamActivity
  * Pantalla para mostrar el perfil y ofertas de trabajo
  *
  */
-class InfoActivity : AppCompatActivity() {
+class JobsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

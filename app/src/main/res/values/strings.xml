@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">AndroidModule1</string>
     <string name="backward"><![CDATA[< Cerrar]]></string>
+    <string name="ejercicio_1">Ejercicio 1</string>
+    <string name="ejercicio_2">Ejercicio 2</string>
+    <string name="tarea">Tarea</string>
+    <string name="layout">Layout: </string>
 </resources>
