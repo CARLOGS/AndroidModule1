@@ -24,7 +24,7 @@ class FlowActivity : AppCompatActivity() {
 
         val btnOpenBrowser = findViewById<Button>(R.id.btnOpenBrowser)
         btnOpenBrowser.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/@androalfa/video/73982831736935744"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://vm.tiktok.com/ZMks1bq9u/"))
             startActivity(intent)
         }
     }
