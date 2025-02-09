@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
-import com.dgtic.androidmodule1.ejercise.home.alexissantos.FlowActivity
+import com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise1.FlowActivity
+import com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1.Exercise1MainActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.LissetMainActivity
@@ -72,7 +73,7 @@ class TeamActivity : AppCompatActivity() {
         val btnAlxis = findViewById<Button>(R.id.btnAlxis)
         btnAlxis.setBackgroundColor(Color.argb(255, 0,64,121))
         btnAlxis.setOnClickListener {
-            val intent = Intent(this, FlowActivity::class.java)
+            val intent = Intent(this, SelectActivityCS::class.java)
             startActivity(intent)
         }
 

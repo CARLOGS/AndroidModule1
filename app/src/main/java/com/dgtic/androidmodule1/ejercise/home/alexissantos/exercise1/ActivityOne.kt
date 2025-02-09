@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.alexissantos
+package com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise1
 
 import android.app.Activity
 import android.content.Intent

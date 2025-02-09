@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.alexissantos
+package com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise1
 
 import android.content.Intent
 import android.net.Uri
@@ -24,7 +24,7 @@ class FlowActivity : AppCompatActivity() {
 
         val btnOpenBrowser = findViewById<Button>(R.id.btnOpenBrowser)
         btnOpenBrowser.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/@androalfa/video/7398283173693574432"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/@androalfa/video/73982831736935744"))
             startActivity(intent)
         }
     }

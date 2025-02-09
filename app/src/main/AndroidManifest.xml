@@ -49,14 +49,18 @@
             android:name=".ejercise.home.vidalruiz.Exercise1.VidalLifeCycleActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.alexissantos.ActivityTwo"
+            android:name=".ejercise.home.alexissantos.exercise1.ActivityTwo"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.alexissantos.ActivityOne"
+            android:name=".ejercise.home.alexissantos.exercise1.ActivityOne"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.alexissantos.FlowActivity"
+            android:name=".ejercise.home.alexissantos.exercise1.FlowActivity"
             android:exported="false" />
+        <activity
+            android:name=".ejercise.home.alexissantos.SelectActivityCS"
+            android:exported="false" />
+
         <activity
             android:name=".ejercise.home.carlogarcia.exercise1.JobsActivity"
             android:exported="false" />
