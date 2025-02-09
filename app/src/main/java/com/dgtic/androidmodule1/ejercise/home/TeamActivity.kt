@@ -15,7 +15,7 @@ import com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.LissetMainActivity
 import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalHomeMainActivity
-import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1.VidalMainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1.VidalExercise1MainActivity
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
