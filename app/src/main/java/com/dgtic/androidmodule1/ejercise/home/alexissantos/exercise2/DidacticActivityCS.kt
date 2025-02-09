@@ -2,11 +2,12 @@ package com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise2
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dgtic.androidmodule1.R
+import com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise2.UIComponentAdapterCS
+
 
 class DidacticActivityCS : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,11 @@ class DidacticActivityCS : AppCompatActivity() {
             "LinearLayout", "RelativeLayout", "ConstraintLayout"
         )
 
-
-
+        val adapter = UIComponentAdapterCS(uiComponents) { componentName ->
+            val intent = Intent(this, DidacticDetailActivityCS::class.java)
+            intent.putExtra("COMPONENT_NAME", componentName)
+            startActivity(intent)
+        }
+        recyclerView.adapter = adapter
     }
 }

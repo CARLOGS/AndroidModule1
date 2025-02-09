@@ -1,24 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="@android:color/background_light"
+    >
 
-    <Button
-        android:id="@+id/btnCurrentFunctionality"
+    <!-- -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ir a Funcionalidad Actual"
-        android:padding="10dp"/>
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
 
-    <Button
-        android:id="@+id/btnDidacticProject"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ir al Proyecto Didáctico"
-        android:padding="10dp"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_dgtic_color_300"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/titleTextWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido al Patio de Juego de Christian Santos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Contenedor de selección de opción -->
+    <LinearLayout
+        android:id="@+id/selectionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/titleTextSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecciona una opción"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp" />
+
+
+        <Button
+            android:id="@+id/btnCurrentFunctionality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio N° 1"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_light"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+
+        <Button
+            android:id="@+id/btnDidacticProject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio N° 2"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_blue_light"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+
+        <Button
+            android:id="@+id/btnHomework"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Homework"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_dark"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+
+        <Button
+            android:id="@+id/btnFinalExercise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ejercicio Final"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_red_dark"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
