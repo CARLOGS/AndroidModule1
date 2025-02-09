@@ -63,7 +63,7 @@ class VidalIntentActivity : AppCompatActivity() {
         // Initialize button to return to VidalMainActivity.
         val btnReturnVidalMainPage = findViewById<Button>(R.id.btnReturnVidalMainPage)
         btnReturnVidalMainPage.setOnClickListener {
-            val intent = Intent(this, VidalMainActivity::class.java)
+            val intent = Intent(this, VidalExercise1MainActivity::class.java)
             startActivity(intent)
         }
     }
