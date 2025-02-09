@@ -57,7 +57,7 @@
             android:name=".ejercise.home.vidalruiz.exercise1.VidalIntentActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.exercise1.VidalMainActivity"
+            android:name=".ejercise.home.vidalruiz.exercise1.VidalExercise1MainActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise1.VidalLifeCycleActivity"

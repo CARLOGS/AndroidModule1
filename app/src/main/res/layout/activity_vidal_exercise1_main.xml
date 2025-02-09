@@ -12,10 +12,36 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.vidalruiz.exercise1.VidalMainActivity">
+    tools:context=".ejercise.home.vidalruiz.exercise1.VidalExercise1MainActivity">
 
 
-    <!-- White Background UNAM DGIT -->
+    <!-- Guidelines for layout structure -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_end="40dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_percent=".1"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottom"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_percent=".9"/>
+
+    <!--Top Background para logo unam-->
     <View
         android:id="@+id/vBackground"
         android:layout_width="wrap_content"
@@ -24,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Logo -->
+    <!-- Logo UNAM -->
     <ImageView
         android:id="@+id/imgLogo"
         android:layout_width="match_parent"
@@ -145,7 +171,7 @@
         />
 
     <Button
-        android:text="Team Main Page"
+        android:text="Vidal's Main Page"
         android:id="@+id/btnReturnMainPage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

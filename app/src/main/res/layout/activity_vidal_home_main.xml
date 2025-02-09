@@ -64,6 +64,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
         android:textColor="#FFC107"
+        android:fontFamily="sans-serif-black"
+        android:textSize="32sp"
         android:gravity="center"
         android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
