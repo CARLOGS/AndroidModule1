@@ -13,6 +13,7 @@ import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.LissetMainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalHomeMainActivity
 import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1.VidalMainActivity
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -79,7 +80,7 @@ class TeamActivity : AppCompatActivity() {
         val btnVidal = findViewById<Button>(R.id.btnVidal)
         btnVidal.setBackgroundColor(Color.argb(255, 0,64,121))
         btnVidal.setOnClickListener {
-            val intent = Intent(this, VidalMainActivity::class.java)
+            val intent = Intent(this, VidalHomeMainActivity::class.java)
             startActivity(intent)
         }
 
