@@ -10,7 +10,7 @@
  * Topic: Implicit Intents
  */
 
-package com.dgtic.androidmodule1.ejercise.home.vidalruiz.Exercise1
+package com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1
 
 import android.content.Intent
 import android.net.Uri
