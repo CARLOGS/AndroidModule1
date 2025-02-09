@@ -12,7 +12,7 @@
  * Topic: Passing and Returning Parameters with Intents
  */
 
-package com.dgtic.androidmodule1.ejercise.home.vidalruiz
+package com.dgtic.androidmodule1.ejercise.home.vidalruiz.Exercise1
 
 import android.content.Intent
 import android.os.Bundle

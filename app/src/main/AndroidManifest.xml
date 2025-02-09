@@ -31,16 +31,16 @@
             android:name=".ejercise.home.lissetnoriega.LissetMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.VidalIntentWithParameters"
+            android:name=".ejercise.home.vidalruiz.Exercise1.VidalIntentWithParameters"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.VidalIntentActivity"
+            android:name=".ejercise.home.vidalruiz.Exercise1.VidalIntentActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.VidalMainActivity"
+            android:name=".ejercise.home.vidalruiz.Exercise1.VidalMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.VidalLifeCycleActivity"
+            android:name=".ejercise.home.vidalruiz.Exercise1.VidalLifeCycleActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.alexissantos.ActivityTwo"

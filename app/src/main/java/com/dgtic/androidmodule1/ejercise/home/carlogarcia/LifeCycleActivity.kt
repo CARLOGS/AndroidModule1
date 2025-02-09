@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -14,7 +13,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.TeamActivity
-import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalMainActivity
 
 /**
  * Pantalla para mostrar el ciclo de vida de un Activity

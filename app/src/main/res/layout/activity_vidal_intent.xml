@@ -12,7 +12,7 @@ Creation Date: February 3nd, 2025
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.vidalruiz.VidalIntentActivity">
+    tools:context=".ejercise.home.vidalruiz.Exercise1.VidalIntentActivity">
 
     <!--White Background  for UNAM DGTIC -->
     <View
