@@ -10,13 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
-import com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise1.FlowActivity
 import com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS
 
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
-import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1.Exercise1MainActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.LissetMainActivity
-import com.dgtic.androidmodule1.ejercise.home.vidalruiz.Exercise1.VidalMainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1.VidalMainActivity
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

@@ -37,16 +37,16 @@
             android:name=".ejercise.home.lissetnoriega.LissetMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.Exercise1.VidalIntentWithParameters"
+            android:name=".ejercise.home.vidalruiz.exercise1.VidalIntentWithParameters"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.Exercise1.VidalIntentActivity"
+            android:name=".ejercise.home.vidalruiz.exercise1.VidalIntentActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.Exercise1.VidalMainActivity"
+            android:name=".ejercise.home.vidalruiz.exercise1.VidalMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.vidalruiz.Exercise1.VidalLifeCycleActivity"
+            android:name=".ejercise.home.vidalruiz.exercise1.VidalLifeCycleActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.alexissantos.exercise1.ActivityTwo"
