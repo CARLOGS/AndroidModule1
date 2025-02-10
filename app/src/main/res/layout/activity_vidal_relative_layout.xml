@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ejercise.home.vidalruiz.exercise2.VidalRelativeLayoutActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="Relative Layout"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:padding="5dp"
+        />
+    <!-- Email -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:inputType="textEmailAddress"
+        android:hint="Write your email address."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+
+        android:layout_below="@id/tvTitle"
+         />
+
+    <!-- Name -->
+    <EditText
+        android:id="@+id/etNombre"
+        android:hint="Write your name."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmail"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="textPersonName"
+        />
+    <!-- Contraseña -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:inputType="textPassword"
+        android:hint="Write your password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNombre"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <!-- Confirmar Contraseña -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:inputType="textPassword"
+        android:hint="Confirm your password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+ />
+
+    <!-- Selección de Tipo de Usuario -->
+    <Spinner
+        android:id="@+id/spnTipoAcceso"
+        android:hint="Select an option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etConfirmPassword"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <!-- Botón de Registro -->
+    <Button
+        android:id="@+id/btnRegistro"
+        android:text="Registrar Cuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spnTipoAcceso"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+/>
+
+</RelativeLayout>

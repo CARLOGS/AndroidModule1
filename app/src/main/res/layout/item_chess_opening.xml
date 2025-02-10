@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp"
+    android:outlineAmbientShadowColor="@color/cardview_dark_background"
+    android:padding="8dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/ivOpening"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="Opening Name"/>
+
+    <TextView
+        android:id="@+id/tvColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Color: White"/>
+
+    <TextView
+        android:id="@+id/tvAggressiveness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aggressiveness: 3/5"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Short description of the opening."/>
+
+    <TextView
+        android:id="@+id/tvEcoCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ECO Code: C60"/>
+</LinearLayout>

@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1.VidalExercise1MainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise2.VidalExercise2MainActivity
 
 class VidalHomeMainActivity : AppCompatActivity() {
     lateinit var btnExercise1: Button
@@ -35,7 +36,8 @@ class VidalHomeMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnExercise2.setOnClickListener {
-            //val intent = Intent(this, Exercise2Activity::class.java)
+            val intent = Intent(this, VidalExercise2MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

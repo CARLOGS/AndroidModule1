@@ -60,20 +60,32 @@
     <!-- Title -->
     <TextView
         android:id="@+id/tvTitle"
-        android:text="Vidal's Home Page"
+        android:text="Vidal's Sandbox"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
         android:textColor="#FFC107"
         android:fontFamily="sans-serif-black"
         android:textSize="32sp"
         android:gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/glStart"
         app:layout_constraintEnd_toEndOf="@id/glEnd"
         app:layout_constraintTop_toBottomOf="@id/imgLogo"/>
 
+    <!-- Subtitle-->
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:text="Exercises and Homework"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
     <!-- Description -->
     <TextView
         android:id="@+id/tvDescription"
@@ -87,7 +99,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/glStart"
         app:layout_constraintEnd_toEndOf="@id/glEnd"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle"/>
 
     <!-- Exercise 1 Card -->
     <androidx.cardview.widget.CardView
@@ -112,31 +124,32 @@
                 android:text="Exercise 1: Activities"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold"
-                android:textColor="#003366"
+                android:textColor="#4A4A4A"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
             <TextView
                 android:id="@+id/tvExercise1Description"
                 android:text="Learn how to handle Activities, manage their lifecycle, and transfer data using Intents by creating an Android project with Kotlin."
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="left"
                 android:textColor="#4A4A4A"
                 android:padding="8dp"
                 android:lineSpacingExtra="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
             <Button
                 android:id="@+id/btnExercise1"
                 android:text="View Exercise 1"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:paddingVertical="8dp"
                 android:paddingHorizontal="16dp"
                 android:backgroundTint="#4A4A4A"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -154,7 +167,6 @@
         android:layout_margin="16dp"
         android:background="#FFFFFF"
         android:padding="16dp">
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -183,14 +195,16 @@
             <Button
                 android:id="@+id/btnExercise2"
                 android:text="View Exercise 2"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:paddingVertical="8dp"
                 android:paddingHorizontal="16dp"
                 android:backgroundTint="#4A4A4A"
                 android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"/>
+                   android:layout_height="wrap_content"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
