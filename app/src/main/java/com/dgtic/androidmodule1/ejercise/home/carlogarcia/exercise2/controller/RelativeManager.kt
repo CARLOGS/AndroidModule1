@@ -44,8 +44,6 @@ class RelativeManager(val context: AppCompatActivity) : CGSLayoutManager(context
                 Debido a su tamaño y velocidad, en internet se le ha apodado “el destructor de ciudades”.
                 
                 Las principales agencias espaciales calculan que hay cerca de un 2% de probabilidades de que impacte en la Tierra.
-                 
-                Aunque la cifra es pequeña y no representa un riesgo inminente, ya se han identificado posibles sitios que podrían ser afectados en el hipotético caso de una colisión.
                 """.trimIndent()),
             NewsEntity(1, """
                 La empresa de ciberseguridad The Shadowserver Foundation alertó el viernes 7 de febrero por un ataque de fuerza bruta a gran escala que lleva activo hace casi un mes y con el que han llegado a utilizar 2.8 millones de direcciones IP de origen al día en múltiples países incluyendo a México.
@@ -54,8 +52,6 @@ class RelativeManager(val context: AppCompatActivity) : CGSLayoutManager(context
                 El Servicio Geológico de Estados Unidos (USGS) identificó que el sismo de magnitud 7.6, registrado el sábado 8 de febrero a las 18:30 horas, tuvo su epicentro a 209 kilómetros de la costa sur de las Islas Caimán, además dio detalles sobre su origen.
 
                 El movimiento telúrico que ameritó alerta de tsunami se originó por una falla de desgarre en la corteza superficial, cerca del límite convergente entre las placas tectónicas de América del Norte y el Caribe según el USGS.
-
-                Este tipo de falla, caracterizada por un desplazamiento horizontal de bloques rocosos, es común en zonas de subducción y fricción interplacas.
                 """.trimIndent())
         )
 
