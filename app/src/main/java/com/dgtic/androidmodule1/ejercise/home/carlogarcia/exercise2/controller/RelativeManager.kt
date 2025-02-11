@@ -1,9 +1,11 @@
 package com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise2.controller
 
 import android.graphics.Color
+import android.view.KeyEvent
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,8 +25,8 @@ class RelativeManager(val context: AppCompatActivity) : CGSLayoutManager(context
     private var layRelative : ViewGroup = context.findViewById<ViewGroup>(R.id.layRelative)
     private val lblNewsTitle = context.findViewById<TextView>(R.id.lblNewsTitle)
     private val lstNews = context.findViewById<RecyclerView>(R.id.lstNews)
-    private val btnPreview = context.findViewById<TextView>(R.id.btnPreview)
-    private val btnNext = context.findViewById<TextView>(R.id.btnNext)
+    private val btnPreview = context.findViewById<ImageButton>(R.id.btnPreview)
+    private val btnNext = context.findViewById<ImageButton>(R.id.btnNext)
     private val btnSearch = context.findViewById<Button>(R.id.btnSearch)
     private val txtSearch = context.findViewById<EditText>(R.id.txtSearch)
     private var pos : Int = 0
@@ -79,22 +81,37 @@ class RelativeManager(val context: AppCompatActivity) : CGSLayoutManager(context
             search()
         }
 
+        txtSearch.setOnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                // Acción al presionar Enter
+                search()
+                true // Indica que el evento fue manejado
+            } else {
+                false // Permite que otros eventos continúen
+            }
+        }
+
         return this
     }
 
     private fun search() {
+        var finded : Boolean = false
+
         for ( i in 0..data.size -1 ) {
             if ( data[i].news.uppercase().contains(txtSearch.text.toString().uppercase()) ) {
                 pos = i
                 lstNews.scrollToPosition( pos )
+                finded = true
                 break
-            } else
-                Toast.makeText(context, "No se encontró el texto en ningún articulo", Toast.LENGTH_LONG).show()
+            }
         }
+
+        if (!finded)
+            Toast.makeText(context, "No se encontró el texto en ningún artículo", Toast.LENGTH_SHORT).show()
     }
 
     override fun setColor(colors: CGSColorData) {
         colors.vbc?.let { layRelative.setBackgroundColor(colors.vbc) }
-        setThemeColor(listOf(lblNewsTitle, btnPreview, btnNext), listOf(btnSearch), colors)
+        setThemeColor(listOf(lblNewsTitle), listOf(btnSearch), colors)
     }
 }
