@@ -6,4 +6,12 @@
     <string name="tarea">Tarea</string>
     <string name="layout">Layout: </string>
     <string name="tema">Temas: </string>
+    <string name="noticias">Noticias</string>
+    <string name="anterior"><![CDATA[<]]></string>
+    <string name="siguiente"><![CDATA[>]]></string>
+    <string name="receta">Receta pay de limón</string>
+    <string name="mostrar_notas">Mostrar notas</string>
+    <string name="nota_final">Nota: ConstraintLayout es todo el Activity</string>
+    <string name="nombre_layout">Layout vacío</string>
+    <string name="vendo">VENDO CASA</string>
 </resources>
