@@ -11,7 +11,7 @@
  * Module: Android Development - Module 1
  * Topic: Activity Lifecycle & Event Handling
  */
-package com.dgtic.androidmodule1.ejercise.home.vidalruiz.Exercise1
+package com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1
 
 import android.content.Intent
 import android.os.Bundle
@@ -62,7 +62,7 @@ class VidalLifeCycleActivity: AppCompatActivity() {
         // Set up btnReturnVidalMainPage button, which returns to VidalMainActivity.
         val btnReturnVidalMainPage = findViewById<Button>(R.id.btnReturnVidalMainPage)
         btnReturnVidalMainPage.setOnClickListener {
-            val intent = Intent(this, VidalMainActivity::class.java)
+            val intent = Intent(this, VidalExercise1MainActivity::class.java)
             startActivity(intent)
         }
     }

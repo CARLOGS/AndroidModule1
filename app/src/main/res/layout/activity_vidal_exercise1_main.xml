@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Developer: Vidal Ruiz
+  Description: Interface for All task for vidal.
+        Date : February 2nd, 2025
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/holo_blue_dark"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ejercise.home.vidalruiz.exercise1.VidalExercise1MainActivity">
+
+
+    <!-- Guidelines for layout structure -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_end="40dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_percent=".1"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glBottom"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintGuide_percent=".9"/>
+
+    <!--Top Background para logo unam-->
+    <View
+        android:id="@+id/vBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Logo UNAM -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_dgtic_color_300"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerInside"/>
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="Vidal's Activities Demo"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:textColor="#FFC107"
+        android:fontFamily="sans-serif-black"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+    <!-- Subtitle-->
+    <TextView
+        android:id="@+id/tvSubTitle"
+        android:text="Exercice 1"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+    <!-- Activity 1 Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardActivity1"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
+        android:layout_margin="16dp"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvExercise1"
+                android:text="Activity 1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="#4A4A4A"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvExercise1Description"
+                android:text="An Activity with key lifecycle methods, featuring a Toast that displays the current lifecycle state."
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:gravity="left"
+                android:textColor="#4A4A4A"
+                android:padding="8dp"
+                android:lineSpacingExtra="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btnExercise1"
+                android:text="Life Cycle Activity"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="16dp"
+                android:backgroundTint="#4A4A4A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Activity 2 Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardActivity2"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintTop_toBottomOf="@id/cardActivity1"
+        android:layout_margin="16dp"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvExercise2"
+                android:text="Activity 2"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="#003366"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvExercise2Description"
+                android:text="An Activity that contains a button, which, when clicked, sends an implicit Intent to open a URL in a web browser."
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#4A4A4A"
+                android:padding="8dp"
+                android:lineSpacingExtra="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnExercise2"
+                android:text="Implicit Intent"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="16dp"
+                android:backgroundTint="#4A4A4A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Activity 3 Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardActivity3"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/glStart"
+        app:layout_constraintEnd_toEndOf="@id/glEnd"
+        app:layout_constraintTop_toBottomOf="@id/cardActivity2"
+        android:layout_margin="16dp"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvExercise3"
+                android:text="Activity 3"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:textColor="#003366"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvExercise3Description"
+                android:text="Send parameters to an activity and receives results from it."
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#4A4A4A"
+                android:padding="8dp"
+                android:lineSpacingExtra="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnExercise3"
+                android:text="Intent with parameters"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="16dp"
+                android:backgroundTint="#4A4A4A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:text="Vidal's Main Page"
+        android:id="@+id/btnReturnMainPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

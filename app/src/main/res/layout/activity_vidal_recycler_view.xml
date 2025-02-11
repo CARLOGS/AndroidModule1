@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ejercise.home.vidalruiz.exercise2.RecyclerView.VidalRecyclerViewActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glButton"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="Recycler View - Chess Opening"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@id/glStart"
+        app:layout_constraintEnd_toStartOf="@id/glEnd"
+        app:layout_constraintTop_toBottomOf="@+id/glTop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAperturas"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/glStart"
+        app:layout_constraintEnd_toStartOf="@id/glEnd"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/glButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <!-- Botón de Registro -->
+    <Button
+        android:id="@+id/btnRetorno"
+        android:text="Regresar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/glStart"
+        app:layout_constraintEnd_toStartOf="@id/glEnd"
+        app:layout_constraintBottom_toTopOf="@id/glButton"
+        android:layout_marginTop="20dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

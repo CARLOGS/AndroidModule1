@@ -14,7 +14,7 @@
  * Topic: Activity Navigation & Intent Handling
  */
 
-package com.dgtic.androidmodule1.ejercise.home.vidalruiz.Exercise1
+package com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1
 
 import android.content.Intent
 import android.os.Bundle
@@ -26,9 +26,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
-import com.dgtic.androidmodule1.ejercise.home.TeamActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalHomeMainActivity
 
-class VidalMainActivity : AppCompatActivity() {
+class VidalExercise1MainActivity : AppCompatActivity() {
 
     /**
      * Registers for an activity result from a secondary activity.
@@ -57,7 +57,7 @@ class VidalMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_vidal_main)
+        setContentView(R.layout.activity_vidal_exercise1_main)
 
         // Adjusts padding for system bars (status bar, navigation bar, etc.).
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -93,7 +93,7 @@ class VidalMainActivity : AppCompatActivity() {
         // Button to return to MainActivity (Home)
         val btnReturnMainPage = findViewById<Button>(R.id.btnReturnMainPage)
         btnReturnMainPage.setOnClickListener {
-            val intent = Intent(this, TeamActivity::class.java)
+            val intent = Intent(this, VidalHomeMainActivity::class.java)
             startActivity(intent)
         }
 

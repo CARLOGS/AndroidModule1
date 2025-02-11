@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ejercise.home.vidalruiz.exercise2.VidalFrameLayoutActivity">
+
+        <TextView
+            android:text="Frame Layout"
+            android:textSize="24sp"
+
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_gravity="top"
+            android:layout_marginTop="40dp"/>
+
+        <!-- Name -->
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_marginTop="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+    <!-- Contraseña -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_marginTop="120dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Confirmar Contraseña -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_marginTop="160dp"
+        android:hint="Confirmar Contraseña"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Selección de Tipo de Usuario -->
+    <Spinner
+        android:id="@+id/spnTipoAcceso"
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"/>
+    <!-- Botón de Registro -->
+    <Button
+        android:id="@+id/btnRegistro"
+        android:text="Registrar Cuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"/>
+
+
+
+</FrameLayout>
+
+
+

@@ -10,12 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
-import com.dgtic.androidmodule1.ejercise.home.alexissantos.exercise1.FlowActivity
 import com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS
+
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.CarloGarciaMainActivity
-import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1.Exercise1MainActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.LissetMainActivity
-import com.dgtic.androidmodule1.ejercise.home.vidalruiz.Exercise1.VidalMainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.VidalHomeMainActivity
+import com.dgtic.androidmodule1.ejercise.home.vidalruiz.exercise1.VidalExercise1MainActivity
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -73,7 +73,7 @@ class TeamActivity : AppCompatActivity() {
         val btnAlxis = findViewById<Button>(R.id.btnAlxis)
         btnAlxis.setBackgroundColor(Color.argb(255, 0,64,121))
         btnAlxis.setOnClickListener {
-            val intent = Intent(this, SelectActivityCS::class.java)
+            val intent = Intent(this, com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS::class.java)
             startActivity(intent)
         }
 
@@ -81,7 +81,7 @@ class TeamActivity : AppCompatActivity() {
         val btnVidal = findViewById<Button>(R.id.btnVidal)
         btnVidal.setBackgroundColor(Color.argb(255, 0,64,121))
         btnVidal.setOnClickListener {
-            val intent = Intent(this, VidalMainActivity::class.java)
+            val intent = Intent(this, VidalHomeMainActivity::class.java)
             startActivity(intent)
         }
 
