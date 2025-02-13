@@ -1,7 +1,6 @@
 package com.dgtic.androidmodule1.ejercise.home.lissetnoriega
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +9,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.TeamActivity
+import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.exercise1.LissetExercise1MainActivity
+import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.exercise2.LissetExercise2MainActivity
 
 class LissetMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,25 +22,20 @@ class LissetMainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val btnLifeCycle = findViewById<Button>(R.id.btnLissetLifeCycle)
-        btnLifeCycle.setOnClickListener {
-            val lifeCycleIntent = Intent(this, LissetLifeCycleActivity::class.java)
-            startActivity(lifeCycleIntent)
+        val btnExercise1 = findViewById<Button>(R.id.btnExercise1)
+        btnExercise1.setOnClickListener {
+            val exercise1Intent = Intent(this, LissetExercise1MainActivity::class.java)
+            startActivity(exercise1Intent)
         }
-        val btnMoodle = findViewById<Button>(R.id.btnMoodle)
-        btnMoodle.setOnClickListener {
-            val urlIntent =  Intent(Intent.ACTION_VIEW, Uri.parse("https://dcd.tic.unam.mx/cursosadistancia/"))
-            startActivity(Intent.createChooser(urlIntent,"Abrir usando:"))
+        val btnExercise2 = findViewById<Button>(R.id.btnExercise2)
+        btnExercise2.setOnClickListener {
+            val exercise2Intent = Intent(this, LissetExercise2MainActivity::class.java)
+            startActivity(exercise2Intent)
         }
-        val btnMainMenu = findViewById<Button>(R.id.btnMain)
-        btnMainMenu.setOnClickListener {
-            val mainMenuIntent = Intent(this, TeamActivity::class.java)
-            startActivity(mainMenuIntent)
-        }
-        val btnActivities = findViewById<Button>(R.id.btnActivities)
-        btnActivities.setOnClickListener {
-            val activitiesIntent = Intent(this, LissetInfoActivity::class.java)
-            startActivity(activitiesIntent)
+        val btnMainTeam = findViewById<Button>(R.id.btnTeamMenu)
+        btnMainTeam.setOnClickListener {
+            val mainTeamIntent = Intent(this, TeamActivity::class.java)
+            startActivity(mainTeamIntent)
         }
     }
 }

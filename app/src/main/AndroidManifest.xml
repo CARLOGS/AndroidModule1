@@ -13,22 +13,44 @@
         android:theme="@style/Theme.AndroidModule1"
         tools:targetApi="31">
         <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.recyclerview.LissetRecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetRegisterLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetConstrainLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetRelativeLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetLinearLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetFrameLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetExercise2MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.LissetMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ejercise.home.vidalruiz.exercise2.RecyclerView.VidalRecyclerViewActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise2.VidalConstrainLayoutActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise2.VidalRelativeLayoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise2.VidalLinearLayoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise2.VidalFrameLayoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise2.VidalExercise2MainActivity"
             android:exported="false" /> <!-- Seccion fusionada entre Alex y Vidal.  VRV 2025-02-09 -->
@@ -55,16 +77,16 @@
             android:name=".ejercise.home.carlogarcia.exercise1.LifeCycleActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.lissetnoriega.LissetSecondInfoActivity"
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetSecondInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.lissetnoriega.LissetInfoActivity"
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.lissetnoriega.LissetLifeCycleActivity"
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetLifeCycleActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.lissetnoriega.LissetMainActivity"
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetExercise1MainActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise1.VidalIntentWithParameters"

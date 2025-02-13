@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.lissetnoriega.LissetInfoActivity"
+    tools:context=".ejercise.home.lissetnoriega.exercise1.LissetInfoActivity"
     android:background="@android:color/holo_blue_dark">
     <!-- Background -->
     <View
