@@ -13,6 +13,7 @@ import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.TeamActivity
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise1.Exercise1MainActivity
 import com.dgtic.androidmodule1.ejercise.home.carlogarcia.exercise2.Exercise2MainActivity
+import com.dgtic.androidmodule1.ejercise.home.carlogarcia.homework.CgsLoginActivity
 
 class CarloGarciaMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +33,15 @@ class CarloGarciaMainActivity : AppCompatActivity() {
         val btnGoHome = findViewById<ImageView>(R.id.btnGoHome)
         val btnBackward = findViewById<ImageView>(R.id.btnBackward)
 
-        // Cambio de color de fondo
+        // Cambio de colores
         btnExercise1.setBackgroundColor(Color.argb(255, 0,64,121))
         btnExercise2.setBackgroundColor(Color.argb(255, 0,64,121))
         btnHomework.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnExercise1.setTextColor(Color.WHITE)
+        btnExercise2.setTextColor(Color.WHITE)
+        btnHomework.setTextColor(Color.WHITE)
 
-        btnHomework.isEnabled = false
+        // btnHomework.isEnabled = false
 
         // Regresa al home
         btnGoHome.setOnClickListener {
@@ -60,6 +64,12 @@ class CarloGarciaMainActivity : AppCompatActivity() {
         // Exercise 2
         btnExercise2.setOnClickListener {
             val intent = Intent(this, Exercise2MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Homework
+        btnHomework.setOnClickListener {
+            val intent = Intent(this, CgsLoginActivity::class.java)
             startActivity(intent)
         }
     }
