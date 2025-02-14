@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ejercise.home.vidalruiz.exercise2.VidalConstrainLayoutActivity">
-
+    tools:context=".ejercise.home.vidalruiz.homework.VidalAccountCreationActivity">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glStart"
         android:orientation="vertical"
@@ -73,7 +72,7 @@
         app:layout_constraintStart_toEndOf="@id/glStart"
         app:layout_constraintEnd_toStartOf="@id/glEnd"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
 
         />
 
@@ -179,6 +178,5 @@
         app:layout_constraintBottom_toTopOf="@id/glBottom"
         android:layout_marginTop="20dp"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
