@@ -39,8 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnLissetLifeCycle"
-        android:text="LifeCycleActivity"
+        android:id="@+id/btnExercise1"
+        android:text="Ejercicio 1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,24 +48,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnMoodle"
-        android:text="Ir a Moodle"
+        android:id="@+id/btnExercise2"
+        android:text="Ejercicio 2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLissetLifeCycle"
+        app:layout_constraintTop_toBottomOf="@id/btnExercise1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnActivities"
-        android:text="2 Activities"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnMoodle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnMain"
-        android:text="Regresar"
+        android:id="@+id/btnTeamMenu"
+        android:text="Regresar a menú de equipo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
