@@ -11,6 +11,7 @@ import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.ejercise.home.TeamActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.exercise1.LissetExercise1MainActivity
 import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.exercise2.LissetExercise2MainActivity
+import com.dgtic.androidmodule1.ejercise.home.lissetnoriega.homework.LissetAppRegisterActivity
 
 class LissetMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,11 @@ class LissetMainActivity : AppCompatActivity() {
         btnMainTeam.setOnClickListener {
             val mainTeamIntent = Intent(this, TeamActivity::class.java)
             startActivity(mainTeamIntent)
+        }
+        val btnHomework = findViewById<Button>(R.id.btnHomework)
+        btnHomework.setOnClickListener {
+            val homeworkIntent = Intent(this, LissetAppRegisterActivity::class.java)
+            startActivity(homeworkIntent)
         }
     }
 }
