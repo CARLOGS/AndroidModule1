@@ -39,6 +39,7 @@ class CgsUserDataActivity : AppCompatActivity() {
         imgPhoto = findViewById<ImageView>(R.id.imgPhoto)
 
         val lblName = findViewById<TextView>(R.id.lblName)
+        val lblLastName = findViewById<TextView>(R.id.lblLastName)
         val lblGender = findViewById<TextView>(R.id.lblGender)
         val lblAge = findViewById<TextView>(R.id.lblAge)
         val lblMail = findViewById<TextView>(R.id.lblMail)
@@ -46,6 +47,9 @@ class CgsUserDataActivity : AppCompatActivity() {
         // Recupera parámetros
         val name = intent.getStringExtra("EXTRA_NAME")
         name?.let { lblName.text = it }
+
+        val lastname = intent.getStringExtra("EXTRA_LASTNAME")
+        lastname?.let { lblLastName.text = it }
 
         // Género
         val gender = intent.getStringExtra("EXTRA_GENDER")

@@ -39,6 +39,7 @@ class CgsRegisterActivity : AppCompatActivity() {
     private lateinit var txtPass: EditText
     private lateinit var txtRPass: EditText
     private lateinit var txtName: EditText
+    private lateinit var txtLastName: EditText
     private lateinit var txtAge: EditText
     private lateinit var txtMail: EditText
     private lateinit var grpGender: RadioGroup
@@ -97,6 +98,7 @@ class CgsRegisterActivity : AppCompatActivity() {
                     putExtra("EXTRA_USER", txtUser.text.toString())
                     putExtra("EXTRA_PASS", txtPass.text.toString())
                     putExtra("EXTRA_NAME", txtName.text.toString())
+                    putExtra("EXTRA_LASTNAME", txtLastName.text.toString())
                     putExtra("EXTRA_GENDER", gender)
                     putExtra("EXTRA_AGE", txtAge.text.toString())
                     putExtra("EXTRA_MAIL", txtMail.text.toString())
@@ -151,6 +153,12 @@ class CgsRegisterActivity : AppCompatActivity() {
         } else if (txtName.text.isEmpty()) {
             valid = false
             Toast.makeText(this, "El nombre es obligatorio", Toast.LENGTH_SHORT).show()
+        } else if (txtLastName.text.isEmpty()) {
+            valid = false
+            Toast.makeText(this, "Los apalledidos son obligatorios", Toast.LENGTH_SHORT).show()
+        } else if (txtAge.text.isEmpty()) {
+            valid = false
+            Toast.makeText(this, "La edad es obligatorio", Toast.LENGTH_SHORT).show()
         } else if (txtMail.text.isEmpty()) {
             valid = false
             Toast.makeText(this, "El correo es obligatorio", Toast.LENGTH_SHORT).show()
@@ -190,6 +198,7 @@ class CgsRegisterActivity : AppCompatActivity() {
         txtPass = findViewById<EditText>(R.id.txtPass)
         txtRPass = findViewById<EditText>(R.id.txtRPass)
         txtName = findViewById<EditText>(R.id.txtName)
+        txtLastName = findViewById<EditText>(R.id.txtLastName)
         txtAge = findViewById<EditText>(R.id.txtAge)
         txtMail = findViewById<EditText>(R.id.txtMail)
         grpGender = findViewById<RadioGroup>(R.id.grpGender)

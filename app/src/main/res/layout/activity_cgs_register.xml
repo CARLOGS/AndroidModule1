@@ -109,7 +109,7 @@
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/txtName"
-        android:hint="Nombre completo *"
+        android:hint="Nombre(s) *"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="@+id/glStart"
         app:layout_constraintEnd_toEndOf="@+id/glEnd"
@@ -117,17 +117,25 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
     <EditText
+        android:id="@+id/txtLastName"
+        android:hint="Apellidos *"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintTop_toBottomOf="@id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <EditText
         android:id="@+id/txtAge"
-        android:hint="Edad"
+        android:hint="Edad *"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="@+id/glStart"
-        app:layout_constraintTop_toBottomOf="@id/txtName"
+        app:layout_constraintTop_toBottomOf="@id/txtLastName"
         android:layout_width="50dp"
         android:layout_height="wrap_content" />
     <RadioGroup
         android:id="@+id/grpGender"
-        app:layout_constraintStart_toStartOf="@+id/glStart"
-        app:layout_constraintTop_toBottomOf="@+id/txtAge"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintTop_toBottomOf="@+id/txtLastName"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">

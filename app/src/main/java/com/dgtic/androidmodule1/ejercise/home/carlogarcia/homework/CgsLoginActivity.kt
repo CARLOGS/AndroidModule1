@@ -19,6 +19,7 @@ class CgsLoginActivity : AppCompatActivity() {
     private var datUser: String? = ""
     private var datPass: String? = ""
     private var datName: String? = ""
+    private var datLastName: String? = ""
     private var datGender: String? = ""
     private var datAge: String? = ""
     private var datMail: String? = ""
@@ -29,6 +30,7 @@ class CgsLoginActivity : AppCompatActivity() {
             datUser = result.data?.getStringExtra("EXTRA_USER")
             datPass = result.data?.getStringExtra("EXTRA_PASS")
             datName = result.data?.getStringExtra("EXTRA_NAME")
+            datLastName = result.data?.getStringExtra("EXTRA_LASTNAME")
             datGender = result.data?.getStringExtra("EXTRA_GENDER")
             datAge = result.data?.getStringExtra("EXTRA_AGE")
             datMail = result.data?.getStringExtra("EXTRA_MAIL")
@@ -95,6 +97,7 @@ class CgsLoginActivity : AppCompatActivity() {
         if ( user.equals(datUser) && pass.equals(datPass) ) {
             val intent = Intent(this, CgsUserDataActivity::class.java).apply {
                 putExtra("EXTRA_NAME", datName)
+                putExtra("EXTRA_LASTNAME", datLastName)
                 putExtra("EXTRA_GENDER", datGender)
                 putExtra("EXTRA_AGE", datAge)
                 putExtra("EXTRA_MAIL", datMail)
