@@ -64,16 +64,40 @@
             android:name=".ejercise.home.carlogarcia.homework.CgsLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ejercise.home.lissetnoriega.LissetSecondInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ejercise.home.lissetnoriega.LissetInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ejercise.home.lissetnoriega.LissetLifeCycleActivity"
-            android:exported="false" />
-        <activity
             android:name=".ejercise.home.lissetnoriega.LissetMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetSecondInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetLifeCycleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise1.LissetExercise1MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetExercise2MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetConstrainLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetFrameLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetLinearLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetRegisterLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.LissetRelativeLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.lissetnoriega.exercise2.recyclerview.LissetRecyclerViewActivity"
             android:exported="false" />
         <activity
             android:name=".ejercise.home.vidalruiz.exercise1.VidalIntentWithParameters"
