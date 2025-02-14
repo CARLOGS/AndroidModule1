@@ -54,6 +54,7 @@ class TeamActivity : AppCompatActivity() {
         // Botón para ir al Activity de Carlo
         val btnCarlo = findViewById<Button>(R.id.btnCarlo)
         btnCarlo.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnCarlo.setTextColor(Color.WHITE)
         btnCarlo.setOnClickListener {
             val carloIntent = Intent(this, CarloGarciaMainActivity::class.java)
 
@@ -64,6 +65,7 @@ class TeamActivity : AppCompatActivity() {
         // Botón para ir al Activity de Lisset
         val btnLisset = findViewById<Button>(R.id.btnLisset)
         btnLisset.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnLisset.setTextColor(Color.WHITE)
         btnLisset.setOnClickListener {
             val lissetIntent = Intent(this, LissetMainActivity::class.java)
             startActivity(lissetIntent)
@@ -72,6 +74,7 @@ class TeamActivity : AppCompatActivity() {
         // Botón para ir al Activity de Alexis
         val btnAlxis = findViewById<Button>(R.id.btnAlxis)
         btnAlxis.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnAlxis.setTextColor(Color.WHITE)
         btnAlxis.setOnClickListener {
             val intent = Intent(this, com.dgtic.androidmodule1.ejercise.home.alexissantos.SelectActivityCS::class.java)
             startActivity(intent)
@@ -80,6 +83,7 @@ class TeamActivity : AppCompatActivity() {
         // Button with text "Ir a Vidal"
         val btnVidal = findViewById<Button>(R.id.btnVidal)
         btnVidal.setBackgroundColor(Color.argb(255, 0,64,121))
+        btnVidal.setTextColor(Color.WHITE)
         btnVidal.setOnClickListener {
             val intent = Intent(this, VidalHomeMainActivity::class.java)
             startActivity(intent)

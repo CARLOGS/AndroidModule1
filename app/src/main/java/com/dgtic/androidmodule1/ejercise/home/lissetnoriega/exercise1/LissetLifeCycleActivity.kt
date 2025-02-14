@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.lissetnoriega
+package com.dgtic.androidmodule1.ejercise.home.lissetnoriega.exercise1
 
 import android.content.Intent
 import android.os.Bundle
@@ -22,7 +22,7 @@ class LissetLifeCycleActivity : AppCompatActivity() {
         }
         val btnReturnLissetMain = findViewById<Button>(R.id.btnMain)
         btnReturnLissetMain.setOnClickListener {
-            val lissetIntent = Intent(this, LissetMainActivity::class.java)
+            val lissetIntent = Intent(this, LissetExercise1MainActivity::class.java)
             startActivity(lissetIntent)
         }
         Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show()

@@ -1,4 +1,4 @@
-package com.dgtic.androidmodule1.ejercise.home.lissetnoriega
+package com.dgtic.androidmodule1.ejercise.home.lissetnoriega.exercise1
 
 import android.content.Intent
 import android.os.Bundle
