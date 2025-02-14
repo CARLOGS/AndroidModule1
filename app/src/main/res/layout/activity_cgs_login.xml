@@ -99,6 +99,7 @@
         android:id="@+id/txtPass"
         android:hint="Clave"
         android:maxLines="1"
+        android:layout_marginBottom="20dp"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/glStart"
         app:layout_constraintEnd_toEndOf="@+id/glEnd"
