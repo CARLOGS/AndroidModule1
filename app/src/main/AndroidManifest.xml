@@ -55,6 +55,15 @@
             android:name=".ejercise.home.carlogarcia.exercise1.LifeCycleActivity"
             android:exported="false" />
         <activity
+            android:name=".ejercise.home.carlogarcia.homework.CgsUserDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.carlogarcia.homework.CgsRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ejercise.home.carlogarcia.homework.CgsLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ejercise.home.lissetnoriega.LissetSecondInfoActivity"
             android:exported="false" />
         <activity
