@@ -3,6 +3,7 @@ package com.dgtic.androidmodule1.ejercise.home.carlogarcia.homework
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -71,6 +72,22 @@ class CgsLoginActivity : AppCompatActivity() {
 
             // Inicia el Activity y espera EXTRA de respuesta
             regBack.launch(intent)
+        }
+
+        txtUser.setOnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                true // Indica que el evento fue manejado
+            } else {
+                false // Permite que otros eventos continúen
+            }
+        }
+
+        txtPass.setOnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
+                true // Indica que el evento fue manejado
+            } else {
+                false // Permite que otros eventos continúen
+            }
         }
     }
 
