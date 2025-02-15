@@ -18,6 +18,9 @@
         android:theme="@style/Theme.AndroidModule1"
         tools:targetApi="31">
         <activity
+            android:name=".ejercise.home.lissetnoriega.homework.LissetSecondRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".ejercise.home.vidalruiz.homework.VidalAccountCreationActivity"
             android:exported="false" />
         <activity
