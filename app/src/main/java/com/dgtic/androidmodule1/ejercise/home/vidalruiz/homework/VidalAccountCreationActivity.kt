@@ -64,7 +64,6 @@ class VidalAccountCreationActivity : AppCompatActivity() {
         btnRegister.setOnClickListener {
             validarFormulario()
         }
-
     }
 
     private fun loadData() {
