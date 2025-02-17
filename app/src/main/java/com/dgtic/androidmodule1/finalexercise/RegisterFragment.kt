@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
+import android.content.Context
 import com.dgtic.androidmodule1.R
 
 class RegisterFragment : Fragment() {
@@ -93,24 +94,34 @@ class RegisterFragment : Fragment() {
                     }
                 }
             }
-
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
         btnRegister.setOnClickListener {
             if (validarFormulario()) {
-                Toast.makeText(requireContext(), "User registered successfully!", Toast.LENGTH_SHORT).show()
+                val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+                val existingEmail = sharedPreferences.getString("email", "")
+                val newEmail = etEmail.text.toString().trim()
 
-                // Simulación de navegación a otra pantalla después del registro
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFragment, LoginFragment.newInstance())
-                    .addToBackStack(null)
-                    .commit()
+                if (existingEmail == newEmail) {
+                    Toast.makeText(requireContext(), "User already exists!", Toast.LENGTH_SHORT).show()
+                } else {
+                    val editor = sharedPreferences.edit()
+                    editor.putString("email", newEmail)
+                    editor.putString("password", etPassword.text.toString().trim())
+                    editor.apply()
+
+                    Toast.makeText(requireContext(), "User registered successfully!", Toast.LENGTH_SHORT).show()
+
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.containerFragment, LoginFragment.newInstance())
+                        .addToBackStack(null)
+                        .commit()
+                }
             }
         }
     }
-
 
     private fun loadData(view: View) {
         val opciones = arrayOf("Select an level of access", "Free Access", "Limited announcements", "Free of publicity")
