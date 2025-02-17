@@ -93,6 +93,18 @@
         app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
         android:layout_marginTop="20dp"/>
 
+    <TextView
+        android:id="@+id/tvPasswordStrength"
+        android:text="Password Strength: "
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
+        android:layout_marginTop="8dp"/>
+
+
     <RadioGroup
         android:id="@+id/rgGender"
         android:orientation="horizontal"
@@ -156,6 +168,7 @@
         app:layout_constraintTop_toBottomOf="@+id/chkTerms"
         android:layout_marginTop="20dp"
         />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

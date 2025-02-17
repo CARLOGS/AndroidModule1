@@ -24,6 +24,10 @@
         <activity
             android:name=".finalexercise.MainActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ejercise.home.lissetnoriega.homework.LissetSecondRegisterActivity"
@@ -152,12 +156,8 @@
             android:exported="false" />
         <activity
             android:name=".ejercise.home.TeamActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
+
     </application>
 
 </manifest>
