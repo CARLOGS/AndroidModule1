@@ -119,7 +119,6 @@
 
     <!-- Data -->
     <TextView
-android:text="carlogs@hotmail.com"
         android:id="@+id/etEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -130,7 +129,6 @@ android:text="carlogs@hotmail.com"
         android:layout_marginTop="40dp"/>
 
     <TextView
-android:text="Carlo García Sánchez"
         android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -141,7 +139,6 @@ android:text="Carlo García Sánchez"
         android:layout_marginTop="20dp"/>
 
     <TextView
-android:text="MyPass.12345678"
         android:id="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -162,7 +159,6 @@ android:text="MyPass.12345678"
         android:layout_marginTop="8dp"/>
 
     <TextView
-android:text="Male"
         android:id="@+id/etGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -173,7 +169,6 @@ android:text="Male"
         android:layout_marginTop="20dp"/>
 
     <TextView
-android:text="Free Access"
         android:id="@+id/etKind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
