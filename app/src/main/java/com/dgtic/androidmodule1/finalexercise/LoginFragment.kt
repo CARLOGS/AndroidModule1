@@ -66,7 +66,8 @@ class LoginFragment : Fragment() {
             intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP  // Evita duplicar actividades
             startActivity(intent)
         } else {
-            Toast.makeText(requireContext(), "Invalid credentials!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),
+                getString(R.string.invalid_credentials), Toast.LENGTH_SHORT).show()
         }
     }
 

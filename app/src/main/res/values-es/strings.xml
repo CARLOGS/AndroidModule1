@@ -54,4 +54,5 @@
     <string name="reg_label_password">Clave:</string>
     <string name="reg_label_gender">Género:</string>
     <string name="reg_label_kind_of_user"><![CDATA[Tipo de usuario: ]]></string>
+    <string name="invalid_credentials">¡Credenciales inválidas!</string>
 </resources>
