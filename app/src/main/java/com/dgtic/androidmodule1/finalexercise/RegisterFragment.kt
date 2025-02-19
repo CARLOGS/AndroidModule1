@@ -1,74 +1,60 @@
 package com.dgtic.androidmodule1.finalexercise
 
+import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.InputType
+import android.text.TextWatcher
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.util.Patterns
-import android.text.InputType
-import android.text.method.PasswordTransformationMethod
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.dgtic.androidmodule1.R
+import com.dgtic.androidmodule1.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
 
-    private lateinit var tvTitle: TextView
-    private lateinit var etEmail: EditText
-    private lateinit var etName: EditText
-    private lateinit var etPassword: EditText
-    private lateinit var etConfirmPassword: EditText
-    private lateinit var tvGender: TextView
-    private lateinit var rgGender: RadioGroup
-    private lateinit var rbMale: RadioButton
-    private lateinit var rbFemale: RadioButton
-    private lateinit var spAccessType: Spinner
-    private lateinit var chkTerms: CheckBox
-    private lateinit var btnRegister: Button
-    private lateinit var tvPasswordStrength: TextView
+    // Recupera el Binding de Fragment
+    private lateinit var binding : FragmentRegisterBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        // Inicializa el Binding
+        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+
+//        return inflater.inflate(R.layout.fragment_register, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initComponents(view)
         loadData(view)
         setListeners()
-        btnRegister.isEnabled = false
-        rbMale.isChecked = true
-        tvPasswordStrength.visibility = View.GONE
+
+        // Para que responda el onOptionIntemSelected
+        setHasOptionsMenu(true)
+
+        binding.btnRegister.isEnabled = false
+        binding.rbMale.isChecked = true
+        binding.tvPasswordStrength.visibility = View.GONE
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun initComponents(view: View) {
         try {
-            tvTitle = view.findViewById(R.id.tvTitle)
-            etEmail = view.findViewById(R.id.etEmail)
-            etName = view.findViewById(R.id.etName)
-            etPassword = view.findViewById(R.id.etPassword)
-            etConfirmPassword = view.findViewById(R.id.etConfirmPassword)
-            tvGender = view.findViewById(R.id.tvGender)
-            rgGender = view.findViewById(R.id.rgGender)
-            rbMale = view.findViewById(R.id.rbMale)
-            rbFemale = view.findViewById(R.id.rbFemale)
-            spAccessType = view.findViewById(R.id.spAccessType)
-            chkTerms = view.findViewById(R.id.chkTerms)
-            btnRegister = view.findViewById(R.id.btnRegister)
-            tvPasswordStrength = view.findViewById(R.id.tvPasswordStrength)
-
-            etPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-            etConfirmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            etConfirmPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            binding.etPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            binding.etConfirmPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.etConfirmPassword.transformationMethod = PasswordTransformationMethod.getInstance()
 
         } catch (e: Exception) {
             Log.e("RegisterFragment", "Error al inicializar componentes: ${e.message}")
@@ -77,23 +63,23 @@ class RegisterFragment : Fragment() {
     }
 
     private fun setListeners() {
-        chkTerms.setOnCheckedChangeListener { _, isChecked ->
-            btnRegister.isEnabled = isChecked
+        binding.chkTerms.setOnCheckedChangeListener { _, isChecked ->
+            binding.btnRegister.isEnabled = isChecked
         }
 
-        etPassword.addTextChangedListener(object : TextWatcher {
+        binding.etPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty()) {
-                    tvPasswordStrength.visibility = View.GONE
+                    binding.tvPasswordStrength.visibility = View.GONE
                 } else {
-                    tvPasswordStrength.visibility = View.VISIBLE
+                    binding.tvPasswordStrength.visibility = View.VISIBLE
                     val strength = getPasswordStrength(s.toString())
-                    tvPasswordStrength.text = "Password Strength: $strength"
+                    binding.tvPasswordStrength.text = "Password Strength: $strength"
 
                     when (strength) {
-                        "Weak" -> tvPasswordStrength.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
-                        "Medium" -> tvPasswordStrength.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_orange_dark))
-                        "Strong" -> tvPasswordStrength.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
+                        "Weak" -> binding.tvPasswordStrength.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark))
+                        "Medium" -> binding.tvPasswordStrength.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_orange_dark))
+                        "Strong" -> binding.tvPasswordStrength.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark))
                     }
                 }
             }
@@ -101,18 +87,18 @@ class RegisterFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        btnRegister.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             if (validarFormulario()) {
                 val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
                 val existingEmail = sharedPreferences.getString("email", "")
-                val newEmail = etEmail.text.toString().trim()
+                val newEmail = binding.etEmail.text.toString().trim()
 
                 if (existingEmail == newEmail) {
                     Toast.makeText(requireContext(), "User already exists!", Toast.LENGTH_SHORT).show()
                 } else {
                     val editor = sharedPreferences.edit()
                     editor.putString("email", newEmail)
-                    editor.putString("password", etPassword.text.toString().trim())
+                    editor.putString("password", binding.etPassword.text.toString().trim())
                     editor.apply()
 
                     Toast.makeText(requireContext(), "User registered successfully!", Toast.LENGTH_SHORT).show()
@@ -129,15 +115,15 @@ class RegisterFragment : Fragment() {
     private fun loadData(view: View) {
         val opciones = arrayOf("Select an level of access", "Free Access", "Limited announcements", "Free of publicity")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, opciones)
-        spAccessType.adapter = adapter
+        binding.spAccessType.adapter = adapter
     }
 
     private fun validarFormulario(): Boolean {
-        val email = etEmail.text.toString().trim()
-        val nombre = etName.text.toString().trim()
-        val password = etPassword.text.toString().trim()
-        val confirmPassword = etConfirmPassword.text.toString().trim()
-        val tipoAcceso = spAccessType.selectedItem.toString()
+        val email = binding.etEmail.text.toString().trim()
+        val nombre = binding.etName.text.toString().trim()
+        val password = binding.etPassword.text.toString().trim()
+        val confirmPassword = binding.etConfirmPassword.text.toString().trim()
+        val tipoAcceso = binding.spAccessType.selectedItem.toString()
 
         if (email.isEmpty() || nombre.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(requireContext(), "All fields are required", Toast.LENGTH_SHORT).show()
@@ -168,6 +154,17 @@ class RegisterFragment : Fragment() {
             password.length >= 6 -> "Medium"
             else -> "Weak"
         }
+    }
+
+    // Sobre carga el método para regresar en el icono home desde un Fragment
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> {
+                requireActivity().onBackPressedDispatcher.onBackPressed()
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

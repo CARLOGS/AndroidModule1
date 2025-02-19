@@ -11,6 +11,12 @@
         <item name="android:textSize">16sp</item>
         <item name="background">@android:color/black</item>
     </style>
+    <style name="TextLabelStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="background">@android:color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="TextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@android:color/white</item>
         <item name="background">@android:color/black</item>

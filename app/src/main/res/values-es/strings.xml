@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">AndroidModule1</string>
+    <string name="backward"><![CDATA[< Cerrar]]></string>
+    <string name="ejercicio_1">Ejercicio 1</string>
+    <string name="ejercicio_2">Ejercicio 2</string>
+    <string name="tarea">Tarea</string>
+    <string name="layout">Layout: </string>
+    <string name="tema">Temas: </string>
+    <string name="noticias">Noticias</string>
+    <string name="anterior"><![CDATA[<]]></string>
+    <string name="siguiente"><![CDATA[>]]></string>
+    <string name="receta">Receta pay de limón</string>
+    <string name="mostrar_notas">Mostrar notas</string>
+    <string name="nota_final">Nota: ConstraintLayout es todo el Activity</string>
+    <string name="nombre_layout">Layout vacío</string>
+    <string name="vendo">VENDO CASA</string>
+
+    <!-- Tarea en español -->
+    <string name="hello_blank_fragment">Hola fragmento en blanco</string>
+    <string name="write_your_email_address">Escribe tu dirección de email</string>
+    <string name="write_your_password">Escribe tu clave</string>
+    <string name="registrar_cuenta">Registrar Cuenta</string>
+    <string name="login">Ingreso</string>
+    <string name="register_new_account">Registro de cuenta nueva</string>
+    <string name="please_fill_all_fields_to_register">Llena todos los campos del registro</string>
+    <string name="write_your_name">Escribe tu nombre</string>
+    <string name="confirm_your_password">Confirma tu clave</string>
+    <string name="register">Registro</string>
+    <string name="login_title">Ingreso</string>
+    <string name="credentials_login">Utiliza tus credenciales para ingresar</string>
+    <string name="login_email_address">Escribe tu dirección de correo</string>
+    <string name="login_password">Escribe tu clave</string>
+    <string name="login_button">Ingreso</string>
+    <string name="login_note">Si no tienes usuario, regístrate:</string>
+    <string name="password_strength">Clave fuerte:</string>
+    <string name="select_gender">Selecciona tu género:</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="kind_of_user">Tipo de usuario:</string>
+    <string name="terms_and_conditions">Acepto los términos y condiciones</string>
+    <string name="select_an_option">Selecciona una opción</string>
+    <string name="last_login">ültimo ingreso: nunca</string>
+    <string name="reg_email">Correo</string>
+    <string name="reg_name">Nombre</string>
+    <string name="reg_new_password">Nueva clave</string>
+    <string name="reg_password_strength">Clave fuerte:</string>
+    <string name="reg_confirm_password">Confirma clave</string>
+    <string name="reg_save_changes">Salvar cambios</string>
+    <string name="reg_logout">Salir</string>
+    <string name="reg_welcome">Bienvenido</string>
+    <string name="reg_gender">Género</string>
+    <string name="reg_lbl_email">Correo:</string>
+    <string name="reg_label_name">Nombre:</string>
+    <string name="reg_label_password">Clave:</string>
+    <string name="reg_label_gender">Género:</string>
+    <string name="reg_label_kind_of_user"><![CDATA[Tipo de usuario: ]]></string>
+</resources>

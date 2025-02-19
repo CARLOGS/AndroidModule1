@@ -14,7 +14,8 @@
     <string name="nota_final">Nota: ConstraintLayout es todo el Activity</string>
     <string name="nombre_layout">Layout vacío</string>
     <string name="vendo">VENDO CASA</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Tarea en inglés -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="write_your_email_address">Write your email address.</string>
     <string name="write_your_password">Write your password</string>
@@ -38,4 +39,19 @@
     <string name="kind_of_user">Kind of user:</string>
     <string name="terms_and_conditions">I accept the terms and conditions</string>
     <string name="select_an_option">Select an option</string>
+    <string name="last_login">Last Login: Never</string>
+    <string name="reg_email">Email</string>
+    <string name="reg_name">Name</string>
+    <string name="reg_new_password">New Password</string>
+    <string name="reg_password_strength">Password Strength:</string>
+    <string name="reg_confirm_password">Confirm Password</string>
+    <string name="reg_save_changes">Save Changes</string>
+    <string name="reg_logout">Logout</string>
+    <string name="reg_welcome">Welcome</string>
+    <string name="reg_gender">Gender</string>
+    <string name="reg_lbl_email">Email:</string>
+    <string name="reg_label_name">Name:</string>
+    <string name="reg_label_password">Password:</string>
+    <string name="reg_label_gender">Gender:</string>
+    <string name="reg_label_kind_of_user"><![CDATA[Kind of user: ]]></string>
 </resources>

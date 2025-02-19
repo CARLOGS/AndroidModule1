@@ -16,28 +16,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.core.content.ContextCompat
 import com.dgtic.androidmodule1.R
+import com.dgtic.androidmodule1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-
-    private lateinit var etEmail: EditText
-    private lateinit var etPassword: EditText
-    private lateinit var btnLogin: Button
+    // Recupera el Binding de Fragment
+    private lateinit var binding : FragmentLoginBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        // Inicializa el Binding
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        // return inflater.inflate(R.layout.fragment_login, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        etEmail = view.findViewById(R.id.etEmail)
-        etPassword = view.findViewById(R.id.etPassword)
-        btnLogin = view.findViewById(R.id.btnLogin)
-        val tvRegister = view.findViewById<TextView>(R.id.tvRegister)
+        setClickableRegisterText(binding.tvRegister, this)
 
-        setClickableRegisterText(tvRegister, this)
-
-        btnLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             loginUser()
         }
 
@@ -52,8 +50,8 @@ class LoginFragment : Fragment() {
         val savedEmail = sharedPreferences.getString("email", "")
         val savedPassword = sharedPreferences.getString("password", "")
 
-        val inputEmail = etEmail.text.toString().trim()
-        val inputPassword = etPassword.text.toString().trim()
+        val inputEmail = binding.etEmail.text.toString().trim()
+        val inputPassword = binding.etPassword.text.toString().trim()
 
         if (inputEmail == savedEmail && inputPassword == savedPassword) {
             Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()

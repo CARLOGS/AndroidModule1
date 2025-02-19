@@ -1,95 +1,207 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp">
+
+    <!-- Guía Superior Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.025"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía Datos Superior Layout -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTopLayout"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía izquierda Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        app:layout_constraintGuide_percent="0.025"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía derecha Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.975"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:text="@string/reg_welcome"
+        style="@style/TitleTextStyle"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glTop"
+        />
 
     <TextView
         android:id="@+id/tvLastLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last Login: Never"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/last_login"
+        style="@style/TextStyle"
+        app:layout_constraintTop_toTopOf="@+id/glTopLayout"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
         android:layout_marginBottom="20dp"/>
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="0dp"
+    <!-- Labels -->
+    <TextView
+        android:text="@string/reg_lbl_email"
+        android:id="@+id/etLabelEmail"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:hint="@string/reg_email"
+        style="@style/TextLabelStyle"
         app:layout_constraintTop_toBottomOf="@id/tvLastLogin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="10dp"/>
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        android:layout_marginTop="40dp"/>
 
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="0dp"
+    <TextView
+        android:text="@string/reg_label_name"
+        android:id="@+id/etLabelName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="textPersonName"
+        android:hint="@string/reg_name"
+        style="@style/TextLabelStyle"
         app:layout_constraintTop_toBottomOf="@id/etEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="10dp"/>
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="0dp"
+    <TextView
+        android:text="@string/reg_label_password"
+        android:id="@+id/etLabelPassword"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="New Password"
-        android:inputType="textPassword"
+        style="@style/TextLabelStyle"
         app:layout_constraintTop_toBottomOf="@id/etName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="10dp"/>
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/etLabelGender"
+        android:text="@string/reg_label_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/reg_gender"
+        style="@style/TextLabelStyle"
+        app:layout_constraintTop_toBottomOf="@id/tvPasswordStrength"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/etLabelKind"
+        android:text="@string/reg_label_kind_of_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/reg_gender"
+        style="@style/TextLabelStyle"
+        app:layout_constraintTop_toBottomOf="@id/etGender"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Data -->
+    <TextView
+android:text="carlogs@hotmail.com"
+        android:id="@+id/etEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/reg_email"
+        style="@style/TextStyle"
+        app:layout_constraintTop_toBottomOf="@id/tvLastLogin"
+        app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+android:text="Carlo García Sánchez"
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/reg_name"
+        style="@style/TextStyle"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+android:text="MyPass.12345678"
+        android:id="@+id/etPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextStyle"
+        app:layout_constraintTop_toBottomOf="@id/etName"
+        app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tvPasswordStrength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password Strength: "
+        android:text="@string/reg_password_strength"
         android:textSize="14sp"
         android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etLabelKind"
         app:layout_constraintTop_toBottomOf="@id/etPassword"
         android:layout_marginTop="8dp"/>
 
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="0dp"
+    <TextView
+android:text="Male"
+        android:id="@+id/etGender"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
+        android:hint="@string/reg_gender"
+        style="@style/TextStyle"
         app:layout_constraintTop_toBottomOf="@id/tvPasswordStrength"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="10dp"/>
+        app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+android:text="Free Access"
+        android:id="@+id/etKind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/reg_gender"
+        style="@style/TextStyle"
+        app:layout_constraintTop_toBottomOf="@id/etGender"
+        app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Save Changes"
-        app:layout_constraintTop_toBottomOf="@id/etConfirmPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/reg_save_changes"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Logout"
-        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="@string/reg_logout"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/btnSave"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
