@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
 import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
 import com.dgtic.androidmodule1.R
 
 class RegisterFragment : Fragment() {
@@ -44,6 +45,8 @@ class RegisterFragment : Fragment() {
         btnRegister.isEnabled = false
         rbMale.isChecked = true
         tvPasswordStrength.visibility = View.GONE
+
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun initComponents(view: View) {

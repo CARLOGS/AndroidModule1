@@ -2,69 +2,98 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:backgroundTint="#FFFFFF"
+    android:background="#000000"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".finalexercise.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Guía Superior Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía izquierda Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        app:layout_constraintGuide_begin="10dp"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía derecha Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="10dp"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <TextView
         android:id="@+id/tvTitle"
-        android:text="Login"
-        android:textSize="24sp"
+        android:text="@string/login_title"
+        style="@style/TitleTextStyle"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogoTI"
         />
     <TextView
         android:id="@+id/tvSubTitle"
-        android:text="Please use your credentials to login"
-        android:gravity="left"
+        android:text="@string/credentials_login"
+        android:gravity="start"
+        style="@style/TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         />
     <!-- Email -->
     <EditText
         android:id="@+id/etEmail"
-        android:inputType="textEmailAddress"
-        android:hint="Write your email address."
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
         android:layout_marginTop="20dp"
-        />
+        android:hint="@string/login_email_address"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
 
     <!-- Contraseña -->
     <EditText
         android:id="@+id/etPassword"
-        android:inputType="textPassword"
-        android:hint="Write your password"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail"
         android:layout_marginTop="20dp"
-        />
+        android:hint="@string/login_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <!-- Botón de Registro -->
     <Button
         android:id="@+id/btnLogin"
-        android:text="Login"
+        android:text="@string/login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         app:layout_constraintTop_toBottomOf="@+id/etPassword"
         android:layout_marginTop="20dp"
         />
@@ -73,13 +102,22 @@
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="If you do not have an username, please register: here"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:text="@string/login_note"
+        style="@style/NotesTextStyle"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         />
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="@+id/glTop"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        android:outlineAmbientShadowColor="@android:color/white"
+        android:id="@+id/imgLogoTI"
+        android:src="@drawable/ti"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

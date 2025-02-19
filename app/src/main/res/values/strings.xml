@@ -25,4 +25,17 @@
     <string name="write_your_name">Write your name.</string>
     <string name="confirm_your_password">Confirm your password</string>
     <string name="register">Register</string>
+    <string name="login_title">Login</string>
+    <string name="credentials_login">Please use your credentials to login</string>
+    <string name="login_email_address">Write your email address.</string>
+    <string name="login_password">Write your password</string>
+    <string name="login_button">Login</string>
+    <string name="login_note">If you do not have an username, please register: here</string>
+    <string name="password_strength">Password Strength:</string>
+    <string name="select_gender">Select Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="kind_of_user">Kind of user:</string>
+    <string name="terms_and_conditions">I accept the terms and conditions</string>
+    <string name="select_an_option">Select an option</string>
 </resources>

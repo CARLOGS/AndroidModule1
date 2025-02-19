@@ -2,28 +2,55 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:backgroundTint="#FFFFFF"
+    android:background="#000000"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".finalexercise.RegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Guía Superior Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.025"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía izquierda Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glStart"
+        app:layout_constraintGuide_begin="20dp"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!-- Guía derecha Layout-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glEnd"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <TextView
         android:id="@+id/tvTitle"
         android:text="@string/register_new_account"
-        android:textSize="24sp"
+        style="@style/TitleTextStyle"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glTop"
         />
+
     <TextView
         android:id="@+id/tvSubTitle"
         android:text="@string/please_fill_all_fields_to_register"
-        android:gravity="left"
+        android:gravity="start"
+        style="@style/NotesTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,73 +63,79 @@
     <!-- Email -->
     <EditText
         android:id="@+id/etEmail"
-        android:inputType="textEmailAddress"
-        android:hint="@string/write_your_email_address"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle"
         android:layout_marginTop="20dp"
-        />
+        android:hint="@string/write_your_email_address"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle" />
 
     <!-- Name -->
     <EditText
         android:id="@+id/etName"
-        android:inputType="textPersonName"
-        android:hint="@string/write_your_name"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail"
         android:layout_marginTop="20dp"
-        />
+        android:hint="@string/write_your_name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
     <!-- Contraseña -->
     <EditText
         android:id="@+id/etPassword"
-        android:inputType="textPassword"
-        android:hint="@string/write_your_password"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etName"
         android:layout_marginTop="20dp"
-        />
+        android:hint="@string/write_your_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
 
     <!-- Confirmar Contraseña -->
     <EditText
         android:id="@+id/etConfirmPassword"
-        android:inputType="textPassword"
-        android:hint="@string/confirm_your_password"
+        style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
         android:layout_marginTop="20dp"
-        />
-    <!-- Selección de Género -->
-    <TextView
-        android:id="@+id/tvGender"
-        android:text="Select Gender:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
-        android:layout_marginTop="20dp"/>
-
+        android:hint="@string/confirm_your_password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
     <TextView
         android:id="@+id/tvPasswordStrength"
-        android:text="Password Strength: "
+        android:text="@string/password_strength"
         android:textSize="14sp"
         android:textColor="@android:color/holo_red_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
         android:layout_marginTop="8dp"/>
+
+    <!-- Selección de Género -->
+    <TextView
+        android:id="@+id/tvGender"
+        android:text="@string/select_gender"
+        style="@style/TextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintTop_toBottomOf="@+id/tvPasswordStrength"
+        android:layout_marginTop="20dp"/>
 
 
     <RadioGroup
@@ -116,57 +149,66 @@
 
         <RadioButton
             android:id="@+id/rbMale"
-            android:text="Male"
+            android:text="@string/male"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/rbFemale"
-            android:text="Female"
+            android:text="@string/female"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RadioGroup>
 
     <TextView
         android:id="@+id/tvKindOfUser"
-        android:text="Kind of user:"
+        android:text="@string/kind_of_user"
+        style="@style/TextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         app:layout_constraintTop_toBottomOf="@+id/rgGender"
         android:layout_marginTop="20dp"/>
 
-    <!-- Selección de Tipo de Usuario -->
-    <Spinner
-        android:id="@+id/spAccessType"
-        android:hint="Select an option"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <FrameLayout
+        android:background="#CCC"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
         app:layout_constraintTop_toBottomOf="@+id/tvKindOfUser"
-        />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <!-- Selección de Tipo de Usuario -->
+        <Spinner
+            android:id="@+id/spAccessType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/select_an_option"
+            android:minHeight="48dp" />
+    </FrameLayout>
     <!-- Aceptar Términos -->
     <CheckBox
         android:id="@+id/chkTerms"
-        android:text="I accept the terms and conditions"
+        android:text="@string/terms_and_conditions"
         android:layout_width="0dp"
+        style="@style/TextStyle"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spAccessType"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister" />
     <!-- Botón de Registro -->
     <Button
         android:id="@+id/btnRegister"
         android:text="@string/register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chkTerms"
-        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/glStart"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
         />
 
 
