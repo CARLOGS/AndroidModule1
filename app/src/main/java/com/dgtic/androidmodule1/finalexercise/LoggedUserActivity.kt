@@ -72,7 +72,6 @@ class LoggedUserActivity : AppCompatActivity() {
         gender?.let {  binding.etGender.setText(gender) }
         pass?.let {  binding.etPassword.setText(pass) }
 
-//        binding.etPassword.text = ""
 //        binding.etConfirmPassword.setText("")
     }
 
@@ -91,6 +90,29 @@ class LoggedUserActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
+        binding.btnSave.setOnClickListener {
+            //if (binding.etPassword.text.toString() != binding.etConfirmPassword.text.toString()) {
+//            if (binding.etPassword.text.toString() != binding.etConfirmPassword.text.toString()) {
+//                Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+
+            val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putString("email", binding.etEmail.text.toString().trim())
+            editor.putString("name", binding.etName.text.toString().trim())
+            if (binding.etPassword.text.toString().isNotEmpty()) {
+                editor.putString("password", binding.etPassword.text.toString().trim())
+            }
+            editor.apply()
+
+            Toast.makeText(this, "User data updated successfully!", Toast.LENGTH_SHORT).show()
+
+            // Recargar la actividad para reflejar los cambios sin minimizar
+            val intent = intent
+            finish()
+            startActivity(intent)
+        }
 
         binding.btnLogout.setOnClickListener {
             cerrarSesion()

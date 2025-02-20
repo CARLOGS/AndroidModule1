@@ -45,7 +45,7 @@
     <string name="reg_new_password">Nueva clave</string>
     <string name="reg_password_strength">Clave fuerte:</string>
     <string name="reg_confirm_password">Confirma clave</string>
-    <string name="reg_save_changes">Salvar cambios</string>
+    <string name="reg_update_changes">Actualizar cambios</string>
     <string name="reg_logout">Salir</string>
     <string name="reg_welcome">Bienvenido</string>
     <string name="reg_gender">Género</string>

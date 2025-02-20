@@ -45,7 +45,7 @@
     <string name="reg_new_password">New Password</string>
     <string name="reg_password_strength">Password Strength:</string>
     <string name="reg_confirm_password">Confirm Password</string>
-    <string name="reg_save_changes">Save Changes</string>
+    <string name="reg_update_changes">Update Changes</string>
     <string name="reg_logout">Logout</string>
     <string name="reg_welcome">Welcome</string>
     <string name="reg_gender">Gender</string>
