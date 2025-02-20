@@ -37,7 +37,7 @@ class LoggedUserActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-//        initComponents()
+        initComponents()
         loadUserData()
         setListeners()
 
@@ -53,6 +53,11 @@ class LoggedUserActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
         val lastLoginTimestamp = sharedPreferences.getString("lastLogin", "Never")
 
+        val email = sharedPreferences.getString("email", "")
+        val name = sharedPreferences.getString("name", "")
+        val gender = sharedPreferences.getString("gender", "")
+        val pass = sharedPreferences.getString("password", "")
+
         val formattedDate = if (lastLoginTimestamp != "Never") {
             val date = Date(lastLoginTimestamp!!.toLong())
             SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(date)
@@ -61,6 +66,14 @@ class LoggedUserActivity : AppCompatActivity() {
         }
 
         binding.tvLastLogin.text = "Last Login: $formattedDate"
+
+        email?.let {  binding.etEmail.setText(email) }
+        name?.let {  binding.etName.setText(name) }
+        gender?.let {  binding.etGender.setText(gender) }
+        pass?.let {  binding.etPassword.setText(pass) }
+
+//        binding.etPassword.text = ""
+//        binding.etConfirmPassword.setText("")
     }
 
     private fun setListeners() {
@@ -103,6 +116,20 @@ class LoggedUserActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         finish()
+    }
+
+    private fun initComponents() {
+        try {
+            binding.tvLastLogin.text ?: throw NullPointerException("tvLastLogin not found")
+            binding.etEmail.text ?: throw NullPointerException("etEmail not found")
+            binding.etName.text ?: throw NullPointerException("etName not found")
+            binding.etPassword.text ?: throw NullPointerException("etPassword not found")
+//            binding.etConfirmPassword.text ?: throw NullPointerException("etConfirmPassword not found")
+            binding.tvPasswordStrength.text ?: throw NullPointerException("tvPasswordStrength not found")
+        } catch (e: NullPointerException) {
+            e.printStackTrace()
+            Toast.makeText(this, "Error loading UI components: ${e.message}", Toast.LENGTH_LONG).show()
+        }
     }
 
     // Sobre carga el método para regresar en el icono home

@@ -118,35 +118,41 @@
         android:layout_marginTop="20dp"/>
 
     <!-- Data -->
-    <TextView
+    <EditText
         android:id="@+id/etEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/reg_email"
-        style="@style/TextStyle"
+        style="@style/EditTextStyle"
         app:layout_constraintTop_toBottomOf="@id/tvLastLogin"
         app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         android:layout_marginTop="40dp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/etName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/reg_name"
-        style="@style/TextStyle"
+        style="@style/EditTextStyle"
         app:layout_constraintTop_toBottomOf="@id/etEmail"
         app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         android:layout_marginTop="20dp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/TextStyle"
+        android:inputType="textPassword"
+        android:hint="@string/reg_new_password"
+        style="@style/EditTextStyle"
         app:layout_constraintTop_toBottomOf="@id/etName"
         app:layout_constraintStart_toEndOf="@+id/etLabelKind"
+        app:layout_constraintEnd_toEndOf="@+id/glEnd"
         android:layout_marginTop="20dp"/>
 
+    <!-- Nota password strength -->
     <TextView
         android:id="@+id/tvPasswordStrength"
         android:layout_width="wrap_content"
