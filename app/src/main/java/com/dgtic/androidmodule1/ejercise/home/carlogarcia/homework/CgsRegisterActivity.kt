@@ -202,7 +202,7 @@ class CgsRegisterActivity : AppCompatActivity() {
         txtAge = findViewById<EditText>(R.id.txtAge)
         txtMail = findViewById<EditText>(R.id.txtMail)
         grpGender = findViewById<RadioGroup>(R.id.grpGender)
-        btnSave = findViewById<Button>(R.id.btnSave)
+        btnSave = findViewById<Button>(R.id.btnUpdate)
 
         // Selecciona un género
         grpGender.check(R.id.radMale)

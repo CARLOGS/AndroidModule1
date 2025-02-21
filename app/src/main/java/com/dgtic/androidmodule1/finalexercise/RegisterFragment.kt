@@ -1,7 +1,10 @@
 package com.dgtic.androidmodule1.finalexercise
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
@@ -13,6 +16,9 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -23,6 +29,9 @@ class RegisterFragment : Fragment() {
 
     // Recupera el Binding de Fragment
     private lateinit var binding : FragmentRegisterBinding
+    private var pos:Int = 0
+    private var suri:String = ""
+    private lateinit var selectImageLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inicializa el Binding
@@ -47,6 +56,34 @@ class RegisterFragment : Fragment() {
         binding.tvPasswordStrength.visibility = View.GONE
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Guarda la posición seleccionada
+        binding.spAccessType.onItemSelectedListener = object: OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                pos = position
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
+
+        }
+
+        // Acción OnClick para buscar una foto
+        binding.imgPhoto.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            selectImageLauncher.launch(Intent.createChooser(intent, "Abrir usando:"))
+        }
+
+        // Inicializar el lanzador para seleccionar imágenes
+        selectImageLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                result.data?.data?.let { uri ->
+                    // Guarda el URI
+                    suri = uri.toString()
+                    // Asigna el URI
+                    binding.imgPhoto.setImageURI(uri) // Muestra la imagen en el ImageView
+                }
+            }
+        }
     }
 
     private fun initComponents(view: View) {
@@ -92,6 +129,18 @@ class RegisterFragment : Fragment() {
                 val sharedPreferences = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
                 val existingEmail = sharedPreferences.getString("email", "")
                 val newEmail = binding.etEmail.text.toString().trim()
+                val name = binding.etName.text.toString().trim()
+                val kind = when (pos) {
+                    0 -> ""
+                    1 -> "Free Access"
+                    2 -> "Limited announcements"
+                    3 -> "Free of publicity"
+                    else -> ""
+                }
+                val gender = when(binding.rgGender.checkedRadioButtonId) {
+                    binding.rbMale.id -> "Male"
+                    else -> "Female"
+                }
 
                 if (existingEmail == newEmail) {
                     Toast.makeText(requireContext(), "User already exists!", Toast.LENGTH_SHORT).show()
@@ -99,6 +148,10 @@ class RegisterFragment : Fragment() {
                     val editor = sharedPreferences.edit()
                     editor.putString("email", newEmail)
                     editor.putString("password", binding.etPassword.text.toString().trim())
+                    editor.putString("name", name)
+                    editor.putString("kind", kind)
+                    editor.putString("gender", gender)
+                    editor.putString("uri", suri)
                     editor.apply()
 
                     Toast.makeText(requireContext(), "User registered successfully!", Toast.LENGTH_SHORT).show()

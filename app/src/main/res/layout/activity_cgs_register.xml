@@ -160,7 +160,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnUpdate"
         android:text="Registrar"
         app:layout_constraintStart_toStartOf="@+id/glStart"
         app:layout_constraintEnd_toEndOf="@+id/glEnd"

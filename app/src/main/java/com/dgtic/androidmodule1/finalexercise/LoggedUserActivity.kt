@@ -1,18 +1,24 @@
 package com.dgtic.androidmodule1.finalexercise
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.dgtic.androidmodule1.R
 import com.dgtic.androidmodule1.databinding.ActivityLoggedUserBinding
@@ -21,16 +27,19 @@ import java.util.Date
 import java.util.Locale
 
 class LoggedUserActivity : AppCompatActivity() {
-
     // Recupera el Binding de Fragment
     private lateinit var binding : ActivityLoggedUserBinding
 
+    private val READ_STORAGE_REQUEST = 100
+    private var uri: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_logged_user)
 
         // Inicializa el Binding
         binding = ActivityLoggedUserBinding.inflate(layoutInflater)
+
+        setContentView(R.layout.activity_logged_user)
 
         // Muestra el ActionBar
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#000000")))
@@ -40,6 +49,12 @@ class LoggedUserActivity : AppCompatActivity() {
         initComponents()
         loadUserData()
         setListeners()
+
+        // Intenta cargar la imagen
+        uri?.let {
+            if ( !uri!!.trim().isEmpty() )
+                checkStoragePermission()
+        }
 
         // Manejo del botón "Atrás" para cerrar sesión
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
@@ -54,9 +69,11 @@ class LoggedUserActivity : AppCompatActivity() {
         val lastLoginTimestamp = sharedPreferences.getString("lastLogin", "Never")
 
         val email = sharedPreferences.getString("email", "")
-        val name = sharedPreferences.getString("name", "")
-        val gender = sharedPreferences.getString("gender", "")
         val pass = sharedPreferences.getString("password", "")
+        val name = sharedPreferences.getString("name", "")
+        val kind = sharedPreferences.getString("kind", "")
+        val gender = sharedPreferences.getString("gender", "")
+        uri = sharedPreferences.getString("uri", "")
 
         val formattedDate = if (lastLoginTimestamp != "Never") {
             val date = Date(lastLoginTimestamp!!.toLong())
@@ -65,18 +82,20 @@ class LoggedUserActivity : AppCompatActivity() {
             "Never"
         }
 
-        binding.tvLastLogin.text = "Last Login: $formattedDate"
+        // Solo se hace referencia por el ID para poder actualizar el Text ya que el Binding requiere otro método
+        findViewById<TextView>(R.id.tvLastLogin).setText("Last Login: $formattedDate")
 
-        email?.let {  binding.etEmail.setText(email) }
-        name?.let {  binding.etName.setText(name) }
-        gender?.let {  binding.etGender.setText(gender) }
-        pass?.let {  binding.etPassword.setText(pass) }
+        findViewById<EditText>(R.id.etEmail).setText(email)
+        findViewById<EditText>(R.id.etName).setText(name)
+        findViewById<TextView>(R.id.etGender).setText(gender)
+        findViewById<TextView>(R.id.etPassword).setText(pass)
+        findViewById<TextView>(R.id.etKind).setText(kind)
 
 //        binding.etConfirmPassword.setText("")
     }
 
     private fun setListeners() {
-        binding.etPassword.addTextChangedListener(object : TextWatcher {
+        findViewById<EditText>(R.id.etPassword).addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val strength = getPasswordStrength(s.toString())
                 binding.tvPasswordStrength.text = "Password Strength: $strength"
@@ -90,7 +109,7 @@ class LoggedUserActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        binding.btnSave.setOnClickListener {
+        findViewById<Button>(R.id.btnUpdate).setOnClickListener {
             //if (binding.etPassword.text.toString() != binding.etConfirmPassword.text.toString()) {
 //            if (binding.etPassword.text.toString() != binding.etConfirmPassword.text.toString()) {
 //                Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_SHORT).show()
@@ -99,22 +118,19 @@ class LoggedUserActivity : AppCompatActivity() {
 
             val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
-            editor.putString("email", binding.etEmail.text.toString().trim())
-            editor.putString("name", binding.etName.text.toString().trim())
+            editor.putString("email", findViewById<EditText>(R.id.etEmail).text.toString().trim())
+            editor.putString("name", findViewById<EditText>(R.id.etName).text.toString().trim())
             if (binding.etPassword.text.toString().isNotEmpty()) {
-                editor.putString("password", binding.etPassword.text.toString().trim())
+                editor.putString("password", findViewById<EditText>(R.id.etPassword).text.toString().trim())
             }
             editor.apply()
 
             Toast.makeText(this, "User data updated successfully!", Toast.LENGTH_SHORT).show()
 
-            // Recargar la actividad para reflejar los cambios sin minimizar
-            val intent = intent
             finish()
-            startActivity(intent)
         }
 
-        binding.btnLogout.setOnClickListener {
+        findViewById<Button>(R.id.btnLogout).setOnClickListener {
             cerrarSesion()
         }
     }
@@ -134,9 +150,10 @@ class LoggedUserActivity : AppCompatActivity() {
         editor.putString("lastLogin", currentTime)
         editor.apply()
 
-        val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
+//        val intent = Intent(this, MainActivity::class.java)
+//        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//        startActivity(intent)
+
         finish()
     }
 
@@ -151,6 +168,20 @@ class LoggedUserActivity : AppCompatActivity() {
         } catch (e: NullPointerException) {
             e.printStackTrace()
             Toast.makeText(this, "Error loading UI components: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    // Checa permisos para leer imagenes locales
+    fun checkStoragePermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+            != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                READ_STORAGE_REQUEST)
+        } else {
+            // Permiso ya concedido
+            findViewById<ImageView>(R.id.imgPhoto).setImageURI(Uri.parse(uri))
         }
     }
 
