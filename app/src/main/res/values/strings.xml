@@ -55,4 +55,8 @@
     <string name="reg_label_gender">Gender:</string>
     <string name="reg_label_kind_of_user"><![CDATA[Kind of user: ]]></string>
     <string name="invalid_credentials">Invalid credentials!</string>
+    <string name="equipo">Equipo:</string>
+    <string name="carlo">- Carlo García Sánchez</string>
+    <string name="christian">- Christian Alexis Santos Escobar</string>
+    <string name="vidal">- Vidal Ruiz Vargas</string>
 </resources>
