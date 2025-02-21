@@ -178,15 +178,33 @@ class LoggedUserActivity : AppCompatActivity() {
 
     // Checa permisos para leer imagenes locales
     fun checkStoragePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-            != PackageManager.PERMISSION_GRANTED) {
-
+        if (
+            ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+        ) {
             ActivityCompat.requestPermissions(this,
                 arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                 READ_STORAGE_REQUEST)
         } else {
             // Permiso ya concedido
-            findViewById<ImageView>(R.id.imgPhoto).setImageURI(Uri.parse(uri))
+//            uri?.let {
+//                if (!uri!!.isEmpty())
+//                    try { findViewById<ImageView>(R.id.imgPhoto).setImageURI(Uri.parse(uri)) } catch (e: Exception) {}
+//            }
+        }
+    }
+
+    // Manejar la respuesta del usuario
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == READ_STORAGE_REQUEST) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                uri?.let {
+//                    if (!uri!!.isEmpty())
+//                        try { findViewById<ImageView>(R.id.imgPhoto).setImageURI(Uri.parse(uri)) } catch (e: Exception) {}
+//                }
+//            } else {
+//                Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
