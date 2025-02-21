@@ -53,7 +53,7 @@ class LoginFragment : Fragment() {
         val inputEmail = binding.etEmail.text.toString().trim()
         val inputPassword = binding.etPassword.text.toString().trim()
 
-        if (inputEmail == savedEmail && inputPassword == savedPassword) {
+        if (inputEmail == savedEmail && inputPassword == savedPassword && !inputEmail.isEmpty()) {
             Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
 
             // Guardar la fecha y hora del último inicio de sesión
