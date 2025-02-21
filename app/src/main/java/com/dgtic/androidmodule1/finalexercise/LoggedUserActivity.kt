@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -97,12 +98,16 @@ class LoggedUserActivity : AppCompatActivity() {
     private fun setListeners() {
         findViewById<EditText>(R.id.etPassword).addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
+                val tvPass = findViewById<TextView>(R.id.tvPasswordStrength)
+                tvPass.visibility = View.VISIBLE
+
                 val strength = getPasswordStrength(s.toString())
-                binding.tvPasswordStrength.text = "Password Strength: $strength"
+                tvPass.setText("Password Strength: $strength")
+
                 when (strength) {
-                    "Weak" -> binding.tvPasswordStrength.setTextColor(ContextCompat.getColor(applicationContext, android.R.color.holo_red_dark))
-                    "Medium" -> binding.tvPasswordStrength.setTextColor(ContextCompat.getColor(applicationContext, android.R.color.holo_orange_dark))
-                    "Strong" -> binding.tvPasswordStrength.setTextColor(ContextCompat.getColor(applicationContext, android.R.color.holo_green_dark))
+                    "Weak" -> tvPass.setTextColor(ContextCompat.getColor(applicationContext, android.R.color.holo_red_dark))
+                    "Medium" -> tvPass.setTextColor(ContextCompat.getColor(applicationContext, android.R.color.holo_orange_dark))
+                    "Strong" -> tvPass.setTextColor(ContextCompat.getColor(applicationContext, android.R.color.holo_green_dark))
                 }
             }
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
